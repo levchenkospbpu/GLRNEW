@@ -6,19 +6,13 @@ using UnityEngine;
 using VContainer.Unity;
 using Object = UnityEngine.Object;
 
-public class UIProvider : IStartable
+public class UIProvider
 {
-    private UIProviderConfig _uiProviderConfig;
     private Dictionary<Type, UIElement> _uiElements;
 
     public UIProvider(UIProviderConfig uiProviderConfig)
     {
-        _uiProviderConfig = uiProviderConfig;
-    }
-
-    public void Start()
-    {
-        _uiElements = _uiProviderConfig.UIPrefabs.ToDictionary(x => x.GetType(), y => y);
+        _uiElements = uiProviderConfig.UIPrefabs.ToDictionary(x => x.GetType(), y => y);
     }
 
     public void Show(Type type, Transform parent)

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using VContainer;
 using VContainer.Unity;
 
-public class CustomizationButton : UIElement
+public class CustomizationButton : MonoBehaviour
 {
     [Inject]
     private UIProvider _uiProvider;

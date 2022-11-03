@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5698447655531958743}
   - component: {fileID: 5910098793568873923}
   - component: {fileID: 4810064438222914809}
-  - component: {fileID: 687100724758902506}
+  - component: {fileID: -1284815348866446775}
   m_Layer: 5
-  m_Name: CustomizationPanel
+  m_Name: PartyPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &687100724758902506
+--- !u!114 &-1284815348866446775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,6 +86,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3581072021557549826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b5af3e9b26a3ef458e9d17fbd864c9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b5e6174cb483cd4983925ccb3941441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

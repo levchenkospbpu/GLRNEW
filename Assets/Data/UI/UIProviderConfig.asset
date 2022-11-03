@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: UIProviderConfig
   m_EditorClassIdentifier: 
   <UIPrefabs>k__BackingField:
-  - {fileID: -3470856899096350361, guid: e7968ada3c61d7544a42786b45c8acb1, type: 3}
+  - {fileID: 687100724758902506, guid: e7968ada3c61d7544a42786b45c8acb1, type: 3}
+  - {fileID: -366192294970685867, guid: 4ef74bda1371b4145a0fae3a4e5cef06, type: 3}
+  - {fileID: -1284815348866446775, guid: 0e7cf61281bdb6640bbc639baa2116d0, type: 3}
