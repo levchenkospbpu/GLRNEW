@@ -9,6 +9,7 @@ using Object = UnityEngine.Object;
 public class UIProvider
 {
     private Dictionary<Type, UIElement> _uiElements;
+    private UIElement _currentUIElement;
 
     public UIProvider(UIProviderConfig uiProviderConfig)
     {
@@ -19,7 +20,8 @@ public class UIProvider
     {
         if (_uiElements.ContainsKey(type))
         {
-            Object.Instantiate(_uiElements[type], parent);
+            Object.Destroy(_currentUIElement?.gameObject);
+            _currentUIElement = Object.Instantiate(_uiElements[type], parent);
         }
     }
 }
