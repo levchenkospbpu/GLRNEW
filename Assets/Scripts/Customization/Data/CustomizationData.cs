@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,16 @@ using UnityEngine;
 public class CustomizationData
 {
     private CustomizationDataConfig _customizationDataConfig;
+
+    public CustomizationData(CustomizationDataConfig customizationDataConfig)
+    {
+        _customizationDataConfig = customizationDataConfig;
+    }
+
+    public Hair GetHair(int index)
+    {
+        return _customizationDataConfig.Hairs[index];
+    }
 
     public Color GetHairColor(int index)
     {
@@ -14,10 +25,5 @@ public class CustomizationData
     public Color GetSkinColor(int index)
     {
         return _customizationDataConfig.SkinColors[index];
-    }
-
-    public Color GetClothColor(int index)
-    {
-        return _customizationDataConfig.ClothColors[index];
     }
 }
