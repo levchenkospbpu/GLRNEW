@@ -8,8 +8,7 @@ using VContainer.Unity;
 
 public class CustomizationButton : MonoBehaviour
 {
-    [Inject]
-    private UIProvider _uiProvider;
+    [SerializeField] private MainPanel _mainPanel;
 
     private void Start()
     {
@@ -18,6 +17,6 @@ public class CustomizationButton : MonoBehaviour
 
     private void ShowCustomizationPanel()
     {
-        _uiProvider.Show(typeof(CustomizationPanel), transform.parent);
+        _mainPanel.UIProvider.Show(typeof(CustomizationPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
     }
 }

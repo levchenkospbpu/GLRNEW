@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IActionCaller
 {
-    public void Raise(ActionType type);
+    public void Raise(ActionType type, DataProvider dataProvider);
 }

@@ -4,40 +4,46 @@ using UnityEngine;
 using VContainer;
 using static UnityEngine.GraphicsBuffer;
 
-public class Appearance : MonoBehaviour
+public class Appearance
 {
-    [Inject]
-    private CustomizationData _customizationData;
-    private SkinnedMeshRenderer _currentHairSMR;
-    private GameObject _currentHairRig;
-    private Transform _rootBone;
-    private Transform _neckBone;
+    public CustomizationData CustomizationData { get; private set; }
+    public Hair[] Hairs { get; private set; }
+    public int CurrentHairID { get; private set; }
 
-    private void Start()
+    private GameObject _player;
+
+    public Appearance(CustomizationData customizationData)
     {
-        _rootBone = GetComponentInChildren<RootBone>().gameObject.transform;
-        _neckBone = GetComponentInChildren<NeckBone>().gameObject.transform;
+        CustomizationData = customizationData;
+    }
+
+    public void Initialize()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        Hairs = _player.GetComponentsInChildren<Hair>();
+        foreach (Hair hair in Hairs)
+        {
+            hair.gameObject.SetActive(false);
+        }
+        CurrentHairID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceHairID, 0);
+        SetHair(CurrentHairID);
     }
  
     public void SetHair(int hairID)
     {
-        if (_currentHairSMR != null) Destroy(_currentHairSMR.gameObject);
-        if (_currentHairSMR != null) Destroy(_currentHairRig);
-        _currentHairRig = Instantiate(_customizationData.GetHair(hairID).rootBone, _neckBone);
-        //_currentHairSMR =  Instantiate(_customizationData.GetHair(hairID).skinnedMeshRenderer, transform);
-        //_currentHairSMR.rootBone = _rootBone;
-        Debug.Log(_customizationData.GetHairColor(hairID));
+        if (hairID < 0 || hairID >= Hairs.Length) return;
+        Hairs[CurrentHairID].gameObject.SetActive(false);
+        Hairs[hairID].gameObject.SetActive(true);
+        CurrentHairID = hairID;
     }
 
     public void SetHairColor(int hairColorID)
     {
-        _currentHairSMR.material.color = _customizationData.GetHairColor(hairColorID);
-        Debug.Log(_customizationData.GetHairColor(hairColorID));
+        CustomizationData.HairMaterial.color = CustomizationData.HairColors[hairColorID];
     }
 
     public void SetSkinColor(int skinColorID)
     {
-        //_skinMaterial.color = _customizationData.GetSkinColor(skinColorID);
-        Debug.Log(_customizationData.GetHairColor(skinColorID));
+        CustomizationData.SkinMaterial.color = CustomizationData.SkinColors[skinColorID];
     }
 }

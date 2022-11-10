@@ -11,19 +11,9 @@ public class CustomizationData
     {
         _customizationDataConfig = customizationDataConfig;
     }
-
-    public Hair GetHair(int index)
-    {
-        return _customizationDataConfig.Hairs[index];
-    }
-
-    public Color GetHairColor(int index)
-    {
-        return _customizationDataConfig.HairColors[index];
-    }
-
-    public Color GetSkinColor(int index)
-    {
-        return _customizationDataConfig.SkinColors[index];
-    }
+    
+    public Color[] HairColors { get { return _customizationDataConfig.HairColors; } }
+    public Color[] SkinColors { get { return _customizationDataConfig.SkinColors; } }
+    public Material HairMaterial { get { return _customizationDataConfig.HairMaterial; } }
+    public Material SkinMaterial { get { return _customizationDataConfig.SkinMaterial; } }
 }

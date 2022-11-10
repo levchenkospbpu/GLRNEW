@@ -6,8 +6,7 @@ using VContainer;
 
 public class MapButton : MonoBehaviour
 {
-    [Inject]
-    private UIProvider _uiProvider;
+    [SerializeField] private MainPanel _mainPanel;
 
     private void Start()
     {
@@ -16,6 +15,6 @@ public class MapButton : MonoBehaviour
 
     private void ShowMapPanel()
     {
-        _uiProvider.Show(typeof(MapPanel), transform.parent);
+        _mainPanel.UIProvider.Show(typeof(MapPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
     }
 }

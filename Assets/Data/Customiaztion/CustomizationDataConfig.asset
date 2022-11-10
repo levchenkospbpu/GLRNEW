@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34658b3c20a85a747878ea3f0ed80c3a, type: 3}
   m_Name: CustomizationDataConfig
   m_EditorClassIdentifier: 
-  <Hairs>k__BackingField:
-  - skinnedMeshRenderer: {fileID: 4484953288590851738, guid: da51cd0cb48bae14f843bcbc78146cfd,
-      type: 3}
-    rootBone: {fileID: 785844906509892113, guid: b35676eba356bfa4fa7b3ac2b0684941,
-      type: 3}
   <HairColors>k__BackingField:
   - {r: 0.6415094, g: 0.29957277, b: 0.29957277, a: 1}
   - {r: 0.3285422, g: 0.6509434, b: 0.33728468, a: 1}
   <SkinColors>k__BackingField:
   - {r: 0.9150943, g: 0.7923238, b: 0.67768776, a: 1}
   - {r: 0.4433962, g: 0.3342552, b: 0.23215556, a: 1}
+  <HairMaterial>k__BackingField: {fileID: 2100000, guid: b55f9523003ce274c8ee88d14cfd0a48,
+    type: 2}
+  <SkinMaterial>k__BackingField: {fileID: 2100000, guid: a2544f5ae950c7a4ca6544886a580d0d,
+    type: 2}
