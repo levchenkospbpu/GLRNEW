@@ -32,8 +32,7 @@ public class UIProvider
     {
         if (_uiElements.ContainsKey(type))
         {
-            _currentUIElement = _objectResolver.Instantiate(_uiElements[type], parent);
-            return _currentUIElement;
+            return _objectResolver.Instantiate(_uiElements[type], parent);
         }
         else return new UIElement();
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HairButton : MonoBehaviour
+public class CharacterCreationHairButton : MonoBehaviour
 {
     [SerializeField] private CharacterCreationPanel _characterCreationPanel;
 

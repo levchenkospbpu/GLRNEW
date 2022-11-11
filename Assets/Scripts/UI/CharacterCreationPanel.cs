@@ -12,13 +12,13 @@ public class CharacterCreationPanel : UIElement
 
     public MaleButton MaleButton { get; private set; }
     public FemaleButton FemaleButton { get; private set; }
-    public ItemsScrollView ItemsScrollView { get; private set; }
+    public CharacterCreationItemsScrollView ItemsScrollView { get; private set; }
 
     private void Start()
     {
         MaleButton = GetComponentInChildren<MaleButton>();
         FemaleButton = GetComponentInChildren<FemaleButton>();
-        ItemsScrollView = GetComponentInChildren<ItemsScrollView>();
+        ItemsScrollView = GetComponentInChildren<CharacterCreationItemsScrollView>();
         ItemsScrollView.gameObject.SetActive(false);
     }
 }

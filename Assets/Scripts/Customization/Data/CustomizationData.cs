@@ -12,8 +12,7 @@ public class CustomizationData
         _customizationDataConfig = customizationDataConfig;
     }
     
-    public Color[] HairColors { get { return _customizationDataConfig.HairColors; } }
-    public Color[] SkinColors { get { return _customizationDataConfig.SkinColors; } }
-    public Material HairMaterial { get { return _customizationDataConfig.HairMaterial; } }
-    public Material SkinMaterial { get { return _customizationDataConfig.SkinMaterial; } }
+    public Material[] HairMaterials { get { return _customizationDataConfig.HairMaterals; } }
+    public Material[] SkinMaterials { get { return _customizationDataConfig.SkinMaterials; } }
+    public Material[] ClothesMaterials { get { return _customizationDataConfig.SkinMaterials; } }
 }

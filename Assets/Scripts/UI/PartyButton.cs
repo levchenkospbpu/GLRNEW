@@ -6,8 +6,7 @@ using VContainer;
 
 public class PartyButton : MonoBehaviour
 {
-    [Inject]
-    private UIProvider _uiProvider;
+    [SerializeField] private MainPanel _mainPanel;
 
     private void Start()
     {
@@ -16,6 +15,6 @@ public class PartyButton : MonoBehaviour
 
     private void ShowPartyPanel()
     {
-        _uiProvider.Show(typeof(PartyPanel), transform.parent);
+        _mainPanel.UIProvider.Show(typeof(PartyPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
     }
 }

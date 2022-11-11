@@ -12,13 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34658b3c20a85a747878ea3f0ed80c3a, type: 3}
   m_Name: CustomizationDataConfig
   m_EditorClassIdentifier: 
-  <HairColors>k__BackingField:
-  - {r: 0.6415094, g: 0.29957277, b: 0.29957277, a: 1}
-  - {r: 0.3285422, g: 0.6509434, b: 0.33728468, a: 1}
-  <SkinColors>k__BackingField:
-  - {r: 0.9150943, g: 0.7923238, b: 0.67768776, a: 1}
-  - {r: 0.4433962, g: 0.3342552, b: 0.23215556, a: 1}
-  <HairMaterial>k__BackingField: {fileID: 2100000, guid: b55f9523003ce274c8ee88d14cfd0a48,
-    type: 2}
-  <SkinMaterial>k__BackingField: {fileID: 2100000, guid: a2544f5ae950c7a4ca6544886a580d0d,
-    type: 2}
+  <HairMaterals>k__BackingField:
+  - {fileID: 2100000, guid: 3e99f8e9af879e14189b317534e1f20f, type: 2}
+  - {fileID: 2100000, guid: fe77acf20e008b34b9acbc803414e8c6, type: 2}
+  - {fileID: 2100000, guid: 57f2e256e5dc7a64cbaafe47c59c448f, type: 2}
+  - {fileID: 2100000, guid: b2a30e9830005a140a92ea4448035ff1, type: 2}
+  - {fileID: 2100000, guid: c1fe3f35d329ed74aa1b52d565273657, type: 2}
+  - {fileID: 2100000, guid: db19d6b2181752e49a6669239bdd32f1, type: 2}
+  - {fileID: 2100000, guid: cf52529b26fa55741a4daadb40a8706f, type: 2}
+  - {fileID: 2100000, guid: e5fe3c8b4538cc747b8517fa78dedc0b, type: 2}
+  - {fileID: 2100000, guid: 212630d31206f7a469dcc2f276bad36e, type: 2}
+  - {fileID: 2100000, guid: 84891656664b42248989f944e5e2a1f3, type: 2}
+  <SkinMaterials>k__BackingField:
+  - {fileID: 2100000, guid: e9f838456ec8a0047b045f6506008713, type: 2}
+  - {fileID: 2100000, guid: 25ef51ec8a2a10a4db9d85d8a722a3d4, type: 2}
+  - {fileID: 2100000, guid: d1f7b2acda6741543bd8660c8c3b51e0, type: 2}
+  - {fileID: 2100000, guid: 7383c265b1c263f44939256359f32b04, type: 2}
+  - {fileID: 2100000, guid: cff14e20c442de34ba339bc8d0118878, type: 2}
+  <ClothesMaterials>k__BackingField:
+  - {fileID: 2100000, guid: 707b2549992192f4ea60f2b0fe36a276, type: 2}
+  - {fileID: 2100000, guid: 17cbc2c09e82af94cb38cb685029ea19, type: 2}
+  - {fileID: 2100000, guid: 8aa1edb01d19b834e895b39b982de131, type: 2}
+  - {fileID: 2100000, guid: e87a9ad40965cc547bd88a68bed2f98c, type: 2}
+  - {fileID: 2100000, guid: 0b90b01713976df45b9ef1e5d6f63188, type: 2}
+  - {fileID: 2100000, guid: f98e4ea7ff7415142aea0fcbb9b2dfb0, type: 2}
+  - {fileID: 2100000, guid: 39b4da9acddb4c94493c597e310d4359, type: 2}
+  - {fileID: 2100000, guid: 0ff265c152ad69f47864670c5074e139, type: 2}
+  - {fileID: 2100000, guid: b7fee942ce192cc4f844233c089635eb, type: 2}
+  - {fileID: 2100000, guid: f87a84f0415a36e4dbc1eeb4931e5368, type: 2}

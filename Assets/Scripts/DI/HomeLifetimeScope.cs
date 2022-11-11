@@ -13,13 +13,13 @@ public class HomeLifetimeScope : LifetimeScope
         builder.RegisterInstance(_uiProviderConfig);
         builder.RegisterInstance(_customizationDataConfig);
 
-        builder.Register<Appearance>(Lifetime.Singleton);
         builder.Register<CustomizationData>(Lifetime.Singleton);
         builder.Register<UIProvider>(Lifetime.Singleton);
 
         builder.Register<ActionBinder>(Lifetime.Singleton).AsImplementedInterfaces();
 
-        builder.RegisterEntryPoint<GameInitializer>(Lifetime.Singleton);
-        builder.RegisterEntryPoint<CustomSceneManager>(Lifetime.Singleton);
+        builder.RegisterEntryPoint<Appearance>(Lifetime.Singleton).AsSelf();
+        builder.RegisterEntryPoint<GameInitializer>(Lifetime.Singleton).AsSelf();
+        builder.RegisterEntryPoint<CustomSceneManager>(Lifetime.Singleton).AsSelf();
     }
 }

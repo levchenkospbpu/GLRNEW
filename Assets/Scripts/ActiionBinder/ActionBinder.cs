@@ -32,5 +32,8 @@ public class ActionBinder : IActionCaller, IActionRegister
 
 public enum ActionType
 {
-    LoadScene
+    LoadScene,
+    ChangeHair,
+    ChangeHairColor,
+    ChangeSkinColor
 }

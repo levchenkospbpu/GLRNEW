@@ -16,6 +16,8 @@ public class ApplyCreationButton : MonoBehaviour
     private void SaveChanges()
     {
         PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairID, _characterCreationPanel.Appearance.CurrentHairID);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairColorID, _characterCreationPanel.Appearance.CurrentHairColorID);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceSkinColorID, _characterCreationPanel.Appearance.CurrentSkinColorID);
     }
 
     private void ShowMainPanel()
