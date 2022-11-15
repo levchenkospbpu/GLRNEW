@@ -18,6 +18,9 @@ public class ApplyCreationButton : MonoBehaviour
         PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairID, _characterCreationPanel.Appearance.CurrentHairID);
         PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairColorID, _characterCreationPanel.Appearance.CurrentHairColorID);
         PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceSkinColorID, _characterCreationPanel.Appearance.CurrentSkinColorID);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceTopColorID, _characterCreationPanel.Appearance.CurrentTopColorID);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceBottomColorID, _characterCreationPanel.Appearance.CurrentBottomColorID);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceShoesColorID, _characterCreationPanel.Appearance.CurrentShoesColorID);
     }
 
     private void ShowMainPanel()

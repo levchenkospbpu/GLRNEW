@@ -20,7 +20,7 @@ public class SkinColorItemButton : UIElement
 
     private void Initialize()
     {
-        GetComponent<Image>().color = _appearance.CustomizationData.ClothesMaterials[_id].color;
+        GetComponent<Image>().color = _appearance.CustomizationData.SkinMaterials[_id].color;
     }
 
     private void ChangeSkinColor()

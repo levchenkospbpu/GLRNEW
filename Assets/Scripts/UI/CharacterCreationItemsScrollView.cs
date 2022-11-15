@@ -45,7 +45,7 @@ public class CharacterCreationItemsScrollView : MonoBehaviour
     public void LoadSkinColorItems()
     {
         Clear();
-        for (int i = 0; i < _characterCreationPanel.Appearance.CustomizationData.ClothesMaterials.Length; i++)
+        for (int i = 0; i < _characterCreationPanel.Appearance.CustomizationData.SkinMaterials.Length; i++)
         {
             SkinColorItemButton skinColorItemButton = _characterCreationPanel.UIProvider.Instantiate(typeof(SkinColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as SkinColorItemButton;
             skinColorItemButton.SetID(i);

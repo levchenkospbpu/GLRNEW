@@ -30,11 +30,16 @@ public class CustomSceneManager : IStartable
         }
         while (scene.progress < 0.9f);
         scene.allowSceneActivation = true;
-        OnSceneLoaded?.Invoke();
     }
 
     public void Start()
     {
         _actionRegister.Register(ActionType.LoadScene, LoadScene);
+        SceneManager.sceneLoaded += SceneManager_OnSceneLoaded;
+    }
+
+    private void SceneManager_OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        OnSceneLoaded?.Invoke();
     }
 }

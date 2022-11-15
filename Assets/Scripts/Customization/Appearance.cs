@@ -14,14 +14,19 @@ public class Appearance : IStartable
     public int CurrentHairID { get; private set; }
     public int CurrentHairColorID { get; private set; }
     public int CurrentSkinColorID { get; private set; }
+    public int CurrentTopColorID { get; private set; }
+    public int CurrentBottomColorID { get; private set; }
+    public int CurrentShoesColorID { get; private set; }
+    public CustomSceneManager CustomSceneManager { get; private set; }
 
     private GameObject _player;
     private IActionRegister _actionRegister;
 
-    public Appearance(CustomizationData customizationData, IActionRegister actionRegister)
+    public Appearance(CustomizationData customizationData, IActionRegister actionRegister, CustomSceneManager customSceneManager)
     {
         CustomizationData = customizationData;
         _actionRegister = actionRegister;
+        CustomSceneManager = customSceneManager;
     }
 
     public void Initialize()
@@ -37,9 +42,15 @@ public class Appearance : IStartable
         CurrentHairID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceHairID, 0);
         CurrentHairColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceHairColorID, 0);
         CurrentSkinColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceSkinColorID, 0);
+        CurrentTopColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceTopColorID, 0);
+        CurrentBottomColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceBottomColorID, 0);
+        CurrentShoesColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceShoesColorID, 0);
         SetHair(new DataProvider(CurrentHairID));
         SetHairColor(new DataProvider(CurrentHairColorID));
         SetSkinColor(new DataProvider(CurrentSkinColorID));
+        SetTopColor(new DataProvider(CurrentTopColorID));
+        SetBottomColor(new DataProvider(CurrentBottomColorID));
+        SetShoesColor(new DataProvider(CurrentShoesColorID));
     }
  
     public void SetHair(DataProvider dataProvider)
@@ -73,10 +84,38 @@ public class Appearance : IStartable
         CurrentSkinColorID = skinColorID;
     }
 
+    public void SetTopColor(DataProvider dataProvider)
+    {
+        int topColorID = dataProvider.GetData<int>();
+        Material[] bodyMaterials = Body.gameObject.GetComponent<SkinnedMeshRenderer>().materials;
+        bodyMaterials[1] = CustomizationData.ClothesMaterials[topColorID];
+        Body.gameObject.GetComponent<SkinnedMeshRenderer>().materials = bodyMaterials;
+        CurrentTopColorID = topColorID;
+    }
+
+    public void SetBottomColor(DataProvider dataProvider)
+    {
+        int bottomColorID = dataProvider.GetData<int>();
+        Material[] bodyMaterials = Body.gameObject.GetComponent<SkinnedMeshRenderer>().materials;
+        bodyMaterials[3] = CustomizationData.ClothesMaterials[bottomColorID];
+        Body.gameObject.GetComponent<SkinnedMeshRenderer>().materials = bodyMaterials;
+        CurrentBottomColorID = bottomColorID;
+    }
+
+    public void SetShoesColor(DataProvider dataProvider)
+    {
+        int shoesColorID = dataProvider.GetData<int>();
+        Material[] bodyMaterials = Body.gameObject.GetComponent<SkinnedMeshRenderer>().materials;
+        bodyMaterials[2] = CustomizationData.ClothesMaterials[shoesColorID];
+        Body.gameObject.GetComponent<SkinnedMeshRenderer>().materials = bodyMaterials;
+        CurrentShoesColorID = shoesColorID;
+    }
+
     public void Start()
     {
         _actionRegister.Register(ActionType.ChangeHair, SetHair);
         _actionRegister.Register(ActionType.ChangeHairColor, SetHairColor);
         _actionRegister.Register(ActionType.ChangeSkinColor, SetSkinColor);
+        CustomSceneManager.OnSceneLoaded += Initialize;
     }
 }

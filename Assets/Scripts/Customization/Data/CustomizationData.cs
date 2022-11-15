@@ -14,5 +14,5 @@ public class CustomizationData
     
     public Material[] HairMaterials { get { return _customizationDataConfig.HairMaterals; } }
     public Material[] SkinMaterials { get { return _customizationDataConfig.SkinMaterials; } }
-    public Material[] ClothesMaterials { get { return _customizationDataConfig.SkinMaterials; } }
+    public Material[] ClothesMaterials { get { return _customizationDataConfig.ClothesMaterials; } }
 }
