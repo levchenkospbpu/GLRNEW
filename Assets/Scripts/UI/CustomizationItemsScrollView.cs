@@ -42,10 +42,40 @@ public class CustomizationItemsScrollView : MonoBehaviour
     public void LoadSkinColorItems()
     {
         Clear();
-        for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.ClothesMaterials.Length; i++)
+        for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.SkinMaterials.Length; i++)
         {
             SkinColorItemButton skinColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(SkinColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as SkinColorItemButton;
             skinColorItemButton.SetID(i);
+        }
+    }
+
+    public void LoadTopColorItems()
+    {
+        Clear();
+        for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.ClothesMaterials.Length; i++)
+        {
+            TopColorItemButton topColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(TopColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as TopColorItemButton;
+            topColorItemButton.SetID(i);
+        }
+    }
+
+    public void LoadBottomColorItems()
+    {
+        Clear();
+        for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.ClothesMaterials.Length; i++)
+        {
+            BottomColorItemButton bottomColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(BottomColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as BottomColorItemButton;
+            bottomColorItemButton.SetID(i);
+        }
+    }
+
+    public void LoadShoesColorItems()
+    {
+        Clear();
+        for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.ClothesMaterials.Length; i++)
+        {
+            ShoesColorItemButton shoesColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(ShoesColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as ShoesColorItemButton;
+            shoesColorItemButton.SetID(i);
         }
     }
 }

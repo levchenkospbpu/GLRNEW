@@ -9,11 +9,6 @@ public class CharacterCreationItemsScrollView : MonoBehaviour
 {
     [SerializeField] private CharacterCreationPanel _characterCreationPanel;
 
-    private void Start()
-    {
-        LoadHairItems();
-    }
-
     public void Clear()
     {
         foreach(Transform child in GetComponentInChildren<CustomizationItemsContent>().transform)

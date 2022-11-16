@@ -41,10 +41,10 @@ public class Appearance : IStartable
         }
         CurrentHairID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceHairID, 0);
         CurrentHairColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceHairColorID, 0);
-        CurrentSkinColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceSkinColorID, 0);
-        CurrentTopColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceTopColorID, 0);
-        CurrentBottomColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceBottomColorID, 0);
-        CurrentShoesColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceShoesColorID, 0);
+        CurrentSkinColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceSkinColorID, 4);
+        CurrentTopColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceTopColorID, 1);
+        CurrentBottomColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceBottomColorID, 2);
+        CurrentShoesColorID = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceShoesColorID, 1);
         SetHair(new DataProvider(CurrentHairID));
         SetHairColor(new DataProvider(CurrentHairColorID));
         SetSkinColor(new DataProvider(CurrentSkinColorID));
@@ -116,6 +116,9 @@ public class Appearance : IStartable
         _actionRegister.Register(ActionType.ChangeHair, SetHair);
         _actionRegister.Register(ActionType.ChangeHairColor, SetHairColor);
         _actionRegister.Register(ActionType.ChangeSkinColor, SetSkinColor);
+        _actionRegister.Register(ActionType.ChangeTopColor, SetTopColor);
+        _actionRegister.Register(ActionType.ChangeBottomColor, SetBottomColor);
+        _actionRegister.Register(ActionType.ChangeShoesColor, SetShoesColor);
         CustomSceneManager.OnSceneLoaded += Initialize;
     }
 }

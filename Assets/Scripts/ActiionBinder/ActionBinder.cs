@@ -35,5 +35,8 @@ public enum ActionType
     LoadScene,
     ChangeHair,
     ChangeHairColor,
-    ChangeSkinColor
+    ChangeSkinColor,
+    ChangeTopColor,
+    ChangeBottomColor,
+    ChangeShoesColor
 }

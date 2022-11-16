@@ -18,12 +18,18 @@ public class CustomizationPanel : UIElement
     public int StartHairID { get; private set; }
     public int StartHairColorID { get; private set; }
     public int StartSkinColorID { get; private set; }
+    public int StartTopColorID { get; private set; }
+    public int StartBottomColorID { get; private set; }
+    public int StartShoesColorID { get; private set; }
 
     private void Start()
     {
         StartHairID = Appearance.CurrentHairID;
         StartHairColorID = Appearance.CurrentHairColorID;
         StartSkinColorID = Appearance.CurrentSkinColorID;
+        StartTopColorID = Appearance.CurrentTopColorID;
+        StartBottomColorID = Appearance.CurrentBottomColorID;
+        StartShoesColorID = Appearance.CurrentShoesColorID;
         ItemsScrollView = GetComponentInChildren<CustomizationItemsScrollView>();
         CancelCustomizationPanel = GetComponentInChildren<CancelCustomizationPanel>();
         CancelCustomizationPanel.gameObject.SetActive(false);
