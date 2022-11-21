@@ -6,7 +6,7 @@ using VContainer;
 using VContainer.Unity;
 using static UnityEngine.GraphicsBuffer;
 
-public class Appearance : IStartable
+public class Appearance : IStartable, IInitializable
 {
     public CustomizationData CustomizationData { get; private set; }
     public Hair[] Hairs { get; private set; }

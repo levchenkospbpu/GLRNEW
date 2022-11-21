@@ -10,6 +10,7 @@ public class WorldSpaceCanvasTrigger : MonoBehaviour
     private void Start()
     {
         _canvasAnimation = _canvas.GetComponent<Animation>();
+        DialogueManager.Instance.DialogueStarted += DialogueManager_OnDialogueStarted;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,5 +31,10 @@ public class WorldSpaceCanvasTrigger : MonoBehaviour
         var state = _canvasAnimation.PlayQueued("WorldSpaceCanvasClose", QueueMode.PlayNow, PlayMode.StopSameLayer);
         yield return new WaitForSeconds(state.length);
         _canvas.gameObject.SetActive(false);
+    }
+
+    private void DialogueManager_OnDialogueStarted()
+    {
+        StartCoroutine(CloseCanvas());
     }
 }

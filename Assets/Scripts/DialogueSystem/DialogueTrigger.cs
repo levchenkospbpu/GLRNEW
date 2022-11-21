@@ -21,12 +21,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OpenDialogue()
     {
-        //StartCoroutine(DialogueManager._instance.EnterDialogueMode(_inkJSON, _name));
+        StartCoroutine(DialogueManager.Instance.EnterDialogueMode(_inkJSON, _name));
     }
 
     private void OnClick()
     {
-        //if (DialogueManager._instance.DialogueIsPlaying) return;
+        if (DialogueManager.Instance.DialogueIsPlaying) return;
         OpenDialogue();
     }
 }

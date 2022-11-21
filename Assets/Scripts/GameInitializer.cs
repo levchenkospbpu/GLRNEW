@@ -7,18 +7,14 @@ using VContainer.Unity;
 public class GameInitializer : IStartable
 {
     private UIProvider _uiProvider;
-    private Appearance _appearance;
 
-    public GameInitializer(UIProvider uiProvider, Appearance appearance)
+    public GameInitializer(UIProvider uiProvider)
     {
         _uiProvider = uiProvider;
-        _appearance = appearance;
     }
 
     public void Start()
     {
-        _appearance.Initialize();
-
         string accessToken = PlayerPrefs.GetString(PlayerPrefsKeys.AccesToken, string.Empty);
 
         if (string.IsNullOrEmpty(accessToken))

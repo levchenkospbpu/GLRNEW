@@ -13,8 +13,6 @@ public class HomeLifetimeScope : LifetimeScope
         builder.RegisterInstance(_uiProviderConfig);
         builder.RegisterInstance(_customizationDataConfig);
 
-        builder.RegisterComponentInHierarchy<CustomSceneManager>();
-
         builder.Register<CustomizationData>(Lifetime.Singleton);
         builder.Register<UIProvider>(Lifetime.Singleton);
 

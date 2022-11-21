@@ -6,14 +6,31 @@ using UnityEngine;
 using Story = Ink.Runtime.Story;
 using Choice = Ink.Runtime.Choice;
 using System;
+using VContainer;
+using VContainer.Unity;
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Sigleton
+    public static DialogueManager Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
+
     public event Action DialogueStarted;
 
     [Header("Dialogue UI")]
-    [SerializeField] private TextMeshProUGUI _dialogueText;
-    [SerializeField] private TextMeshProUGUI _npcNameText;
+    private TextMeshProUGUI _dialogueText;
+    private TextMeshProUGUI _npcNameText;
 
     [Header("Choices UI")]
     private GameObject[] _choices;
@@ -21,11 +38,26 @@ public class DialogueManager : MonoBehaviour
 
     private Ink.Runtime.Story _currentStory;
 
+    [Inject]
+    private UIProvider _uiProvider;
+
     public bool DialogueIsPlaying { get; private set; }
 
     private void Start()
     {
         DialogueIsPlaying = false;
+    }
+
+    private void Initialize()
+    {
+        _dialogueText = FindObjectOfType<DialogueText>().gameObject.GetComponent<TextMeshProUGUI>();
+        _npcNameText = FindObjectOfType<DialogueNPCNameText>().gameObject.GetComponent<TextMeshProUGUI>();
+        var choices = FindObjectsOfType<DialogueChoice>();
+        _choices = new GameObject[choices.Length];
+        for (int i = 0; i < _choices.Length; i++)
+        {
+            _choices[i] = choices[i].gameObject;
+        }
         _choicesText = new TextMeshProUGUI[_choices.Length];
         for (int i = 0; i < _choices.Length; i++)
         {
@@ -51,6 +83,8 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator EnterDialogueMode(TextAsset inkJSON, string name)
     {
+        _uiProvider.Show(typeof(DialoguePanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+        Initialize();
         _currentStory = new Story(inkJSON.text);
         DialogueStarted?.Invoke();
 
@@ -68,7 +102,7 @@ public class DialogueManager : MonoBehaviour
         DialogueIsPlaying = false;
         _dialogueText.text = string.Empty;
         _npcNameText.text = string.Empty;
-        HideChoices();
+        _uiProvider.Show(typeof(LocationPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
     }
 
     private void ContinueStory()
