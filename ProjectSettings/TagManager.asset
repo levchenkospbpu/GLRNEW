@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainCanvas
   - Walkable
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX
