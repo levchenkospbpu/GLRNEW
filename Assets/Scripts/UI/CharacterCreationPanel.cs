@@ -16,9 +16,9 @@ public class CharacterCreationPanel : UIElement
 
     private void Start()
     {
-        MaleButton = GetComponentInChildren<MaleButton>();
-        FemaleButton = GetComponentInChildren<FemaleButton>();
+        //MaleButton = GetComponentInChildren<MaleButton>();
+        //FemaleButton = GetComponentInChildren<FemaleButton>();
         ItemsScrollView = GetComponentInChildren<CharacterCreationItemsScrollView>();
-        ItemsScrollView.gameObject.SetActive(false);
+        //ItemsScrollView.gameObject.SetActive(false);
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1386619941608303977}
   - component: {fileID: 4611630053408090568}
   - component: {fileID: 4729680117520542778}
+  - component: {fileID: 3968362419148563626}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -79,6 +80,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3968362419148563626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150848092929897674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &781183090136853607
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +378,7 @@ GameObject:
   - component: {fileID: 1458756870349596750}
   - component: {fileID: 6106667733494475357}
   - component: {fileID: 7401650847035602761}
+  - component: {fileID: 980402622892570636}
   m_Layer: 5
   m_Name: TopColorButton
   m_TagString: Untagged
@@ -418,7 +435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -485,6 +502,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &980402622892570636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2386394922474680118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3355990224879343485
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +530,7 @@ GameObject:
   - component: {fileID: 4475699002730490405}
   - component: {fileID: 441400026016715307}
   - component: {fileID: 1314873848232465116}
+  - component: {fileID: 8411097877061219009}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -554,7 +587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -621,6 +654,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &8411097877061219009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3355990224879343485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3456625428756072004
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +682,7 @@ GameObject:
   - component: {fileID: 4234929804211819163}
   - component: {fileID: 6037077383329000328}
   - component: {fileID: 5376896702298109009}
+  - component: {fileID: 5236586632606510174}
   m_Layer: 5
   m_Name: HairButton
   m_TagString: Untagged
@@ -690,7 +739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -757,6 +806,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &5236586632606510174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456625428756072004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3581072021557549826
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +932,7 @@ GameObject:
   - component: {fileID: 8345082708556172852}
   - component: {fileID: 1855162998714395578}
   - component: {fileID: 5881629251996428305}
+  - component: {fileID: 7600470453610947395}
   m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
@@ -924,7 +989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -991,6 +1056,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cancelCustomizationPanel: {fileID: 6118292486357137819}
+--- !u!114 &7600470453610947395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903352911024513217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4864654600346502639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1084,7 @@ GameObject:
   - component: {fileID: 7744720286734748279}
   - component: {fileID: 9206720479135821803}
   - component: {fileID: 2419629584482364485}
+  - component: {fileID: 8012706351614700938}
   m_Layer: 5
   m_Name: BottomColorButton
   m_TagString: Untagged
@@ -1060,7 +1141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1127,6 +1208,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &8012706351614700938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4864654600346502639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4972472341392171365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1641,7 @@ GameObject:
   - component: {fileID: 1709932563877890334}
   - component: {fileID: 510352271005874782}
   - component: {fileID: 5327620592404157463}
+  - component: {fileID: 3179845347469628045}
   m_Layer: 5
   m_Name: ItemsScrollView
   m_TagString: Untagged
@@ -1594,14 +1691,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1654,6 +1751,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &3179845347469628045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133238659307112202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6240329989246445450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1779,7 @@ GameObject:
   - component: {fileID: 1818949058040823721}
   - component: {fileID: 4126855872751274672}
   - component: {fileID: 1605609367243543187}
+  - component: {fileID: 2110233502491437026}
   m_Layer: 5
   m_Name: HairColorButton
   m_TagString: Untagged
@@ -1723,7 +1836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1790,6 +1903,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &2110233502491437026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240329989246445450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6253733560220516147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1893,6 +2021,7 @@ GameObject:
   - component: {fileID: 764023589635791499}
   - component: {fileID: 116498973889607046}
   - component: {fileID: 5622035365335312464}
+  - component: {fileID: 5977098858213469992}
   m_Layer: 5
   m_Name: ApplyButton
   m_TagString: Untagged
@@ -1949,7 +2078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2016,6 +2145,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &5977098858213469992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452383932397289619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6893482772793484352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2173,7 @@ GameObject:
   - component: {fileID: 2378324441639114895}
   - component: {fileID: 2644572665225421497}
   - component: {fileID: 9166266009060366522}
+  - component: {fileID: 7910353140595173411}
   m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
@@ -2085,7 +2230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2152,6 +2297,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &7910353140595173411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893482772793484352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7204421666764308475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +2684,7 @@ GameObject:
   - component: {fileID: 4439148721870669522}
   - component: {fileID: 4482422600980178492}
   - component: {fileID: 2170753004346716191}
+  - component: {fileID: 1475904942931042850}
   m_Layer: 5
   m_Name: ShoesColorButton
   m_TagString: Untagged
@@ -2580,7 +2741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2647,6 +2808,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationPanel: {fileID: -1670773565792715182}
+--- !u!114 &1475904942931042850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477439726702381043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8566303791132689963
 GameObject:
   m_ObjectHideFlags: 0

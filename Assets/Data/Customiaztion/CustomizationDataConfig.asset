@@ -17,12 +17,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fe77acf20e008b34b9acbc803414e8c6, type: 2}
   - {fileID: 2100000, guid: 57f2e256e5dc7a64cbaafe47c59c448f, type: 2}
   - {fileID: 2100000, guid: b2a30e9830005a140a92ea4448035ff1, type: 2}
-  - {fileID: 2100000, guid: c1fe3f35d329ed74aa1b52d565273657, type: 2}
   - {fileID: 2100000, guid: db19d6b2181752e49a6669239bdd32f1, type: 2}
   - {fileID: 2100000, guid: cf52529b26fa55741a4daadb40a8706f, type: 2}
   - {fileID: 2100000, guid: e5fe3c8b4538cc747b8517fa78dedc0b, type: 2}
   - {fileID: 2100000, guid: 212630d31206f7a469dcc2f276bad36e, type: 2}
-  - {fileID: 2100000, guid: 84891656664b42248989f944e5e2a1f3, type: 2}
   <SkinMaterials>k__BackingField:
   - {fileID: 2100000, guid: e9f838456ec8a0047b045f6506008713, type: 2}
   - {fileID: 2100000, guid: 25ef51ec8a2a10a4db9d85d8a722a3d4, type: 2}

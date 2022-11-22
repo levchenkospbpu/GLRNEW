@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 4234929804211819163}
   - component: {fileID: 6037077383329000328}
   - component: {fileID: 4204523496431317982}
+  - component: {fileID: 2993150674192448313}
   m_Layer: 5
   m_Name: HairButton
   m_TagString: Untagged
@@ -204,7 +205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -271,6 +272,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterCreationPanel: {fileID: 8933557845453910977}
+--- !u!114 &2993150674192448313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456625428756072004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3581072021557549826
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6341647421966936638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -786,6 +802,7 @@ GameObject:
   - component: {fileID: 1709932563877890334}
   - component: {fileID: 510352271005874782}
   - component: {fileID: 8514381559556276195}
+  - component: {fileID: 2027515014511811646}
   m_Layer: 5
   m_Name: ItemsScrollView
   m_TagString: Untagged
@@ -835,14 +852,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -895,6 +912,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterCreationPanel: {fileID: 8933557845453910977}
+--- !u!114 &2027515014511811646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133238659307112202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6240329989246445450
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +940,7 @@ GameObject:
   - component: {fileID: 1818949058040823721}
   - component: {fileID: 4126855872751274672}
   - component: {fileID: 6768956650974575841}
+  - component: {fileID: 7736003210663927259}
   m_Layer: 5
   m_Name: HairColorButton
   m_TagString: Untagged
@@ -964,7 +997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1031,6 +1064,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterCreationPanel: {fileID: 8933557845453910977}
+--- !u!114 &7736003210663927259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240329989246445450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6452383932397289619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1092,7 @@ GameObject:
   - component: {fileID: 764023589635791499}
   - component: {fileID: 116498973889607046}
   - component: {fileID: 5559477174036072873}
+  - component: {fileID: 8548673435749938234}
   m_Layer: 5
   m_Name: ApplyButton
   m_TagString: Untagged
@@ -1100,7 +1149,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1167,6 +1216,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterCreationPanel: {fileID: 8933557845453910977}
+--- !u!114 &8548673435749938234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452383932397289619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6578743113353574872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1244,7 @@ GameObject:
   - component: {fileID: 2449483343267943395}
   - component: {fileID: 4107837888769421842}
   - component: {fileID: 3744348253724650990}
+  - component: {fileID: 4610776548514242530}
   m_Layer: 5
   m_Name: SkinColorButton
   m_TagString: Untagged
@@ -1236,7 +1301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1303,6 +1368,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterCreationPanel: {fileID: 8933557845453910977}
+--- !u!114 &4610776548514242530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578743113353574872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6691822162159344270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7172888050557954945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2086,7 +2166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8497021454744702816
 RectTransform:
   m_ObjectHideFlags: 0

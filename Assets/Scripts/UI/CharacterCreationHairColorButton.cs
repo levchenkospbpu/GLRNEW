@@ -16,8 +16,8 @@ public class CharacterCreationHairColorButton : MonoBehaviour
 
     private void HideGenderButtons()
     {
-        _characterCreationPanel.MaleButton.gameObject.SetActive(false);
-        _characterCreationPanel.FemaleButton.gameObject.SetActive(false);
+        //_characterCreationPanel.MaleButton.gameObject.SetActive(false);
+        //_characterCreationPanel.FemaleButton.gameObject.SetActive(false);
     }
 
     private void ShowItemsScrollViev()

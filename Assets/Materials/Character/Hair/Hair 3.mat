@@ -355,7 +355,7 @@ Material:
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
-    - _HighColor_Power: 0.5
+    - _HighColor_Power: 0
     - _HighlightOverridden: 0
     - _HighlightVisible: 1
     - _InvTilingScale: 1
@@ -516,15 +516,15 @@ Material:
     - _utsVersionY: 8
     - _utsVersionZ: 2
     m_Colors:
-    - _1st_ShadeColor: {r: 0.1400817, g: 0.36862746, b: 0.10588234, a: 1}
-    - _2nd_ShadeColor: {r: 0.07234208, g: 0.18867922, b: 0.05428977, a: 1}
+    - _1st_ShadeColor: {r: 0.43261865, g: 0.6037736, b: 0.40726238, a: 1}
+    - _2nd_ShadeColor: {r: 0.2861054, g: 0.4056604, b: 0.26980242, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.14117648, g: 0.36862746, b: 0.10588236, a: 1}
+    - _BaseColor: {r: 0.43137258, g: 0.6039216, b: 0.40784317, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.14117648, g: 0.36862746, b: 0.10588236, a: 1}
+    - _Color: {r: 0.43137255, g: 0.6039216, b: 0.40784314, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

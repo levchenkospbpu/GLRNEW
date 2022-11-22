@@ -504,8 +504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98bd0b43583f8af42b0b1cf5942474d6, type: 2}
   m_sharedMaterial: {fileID: 9159637816277085764, guid: 98bd0b43583f8af42b0b1cf5942474d6,
@@ -821,7 +820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choice 3
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98bd0b43583f8af42b0b1cf5942474d6, type: 2}
   m_sharedMaterial: {fileID: 9159637816277085764, guid: 98bd0b43583f8af42b0b1cf5942474d6,
@@ -957,7 +956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choice 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98bd0b43583f8af42b0b1cf5942474d6, type: 2}
   m_sharedMaterial: {fileID: 9159637816277085764, guid: 98bd0b43583f8af42b0b1cf5942474d6,
@@ -1355,7 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb6c6d03ad6bbb4aa5d28f5b39195e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 0
+  _id: 2
 --- !u!1 &3415621543065339121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb6c6d03ad6bbb4aa5d28f5b39195e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 0
+  _id: 1
 --- !u!1 &3415621543181104889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Akogare Feugele
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98bd0b43583f8af42b0b1cf5942474d6, type: 2}
   m_sharedMaterial: {fileID: 9159637816277085764, guid: 98bd0b43583f8af42b0b1cf5942474d6,
@@ -2176,7 +2175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choice 2
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98bd0b43583f8af42b0b1cf5942474d6, type: 2}
   m_sharedMaterial: {fileID: 9159637816277085764, guid: 98bd0b43583f8af42b0b1cf5942474d6,

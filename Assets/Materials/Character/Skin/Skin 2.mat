@@ -516,15 +516,15 @@ Material:
     - _utsVersionY: 8
     - _utsVersionZ: 2
     m_Colors:
-    - _1st_ShadeColor: {r: 0.3018868, g: 0.1912036, b: 0.10964756, a: 1}
-    - _2nd_ShadeColor: {r: 0.1981132, g: 0.1249555, b: 0.07008722, a: 1}
+    - _1st_ShadeColor: {r: 0.31132078, g: 0.2248894, b: 0.16006587, a: 1}
+    - _2nd_ShadeColor: {r: 0.13207549, g: 0.09564652, b: 0.069152735, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.3019608, g: 0.19215687, b: 0.10980392, a: 1}
+    - _BaseColor: {r: 0.30980393, g: 0.22352943, b: 0.16078432, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.30196077, g: 0.19215682, b: 0.10980389, a: 1}
+    - _Color: {r: 0.3098039, g: 0.2235294, b: 0.16078427, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
