@@ -856,8 +856,8 @@ GameObject:
   - component: {fileID: 1420624999193966273}
   - component: {fileID: 1420624999193966274}
   - component: {fileID: 1420624999193966275}
-  - component: {fileID: 1420624999193966302}
   - component: {fileID: 1420624999193966303}
+  - component: {fileID: 7210347766940781676}
   m_Layer: 5
   m_Name: PartyButton
   m_TagString: Untagged
@@ -968,19 +968,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1420624999193966302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420624999193966277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6578d2d6d8c374cb3c73ce2d8fee08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainPanel: {fileID: -3243768811322582127}
 --- !u!114 &1420624999193966303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,6 +982,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1
+--- !u!114 &7210347766940781676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420624999193966277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a7cd42efed5f4479c60c3ff102b964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainPanel: {fileID: -3243768811322582127}
 --- !u!1 &1420624999277274189
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,5 +38,9 @@ public enum ActionType
     ChangeSkinColor,
     ChangeTopColor,
     ChangeBottomColor,
-    ChangeShoesColor
+    ChangeShoesColor,
+    SetChangeableSlotType,
+    SetChangeableCharacterID,
+    SetPartyCurrentIDs,
+    SaveParty
 }
