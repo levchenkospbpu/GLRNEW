@@ -18,18 +18,11 @@ public class CustomSceneManager : IStartable
         _actionRegister = actionRegister;
     }
 
-    public async void LoadScene(DataProvider dataProvider)
+    public void LoadScene(DataProvider dataProvider)
     {
         OnSceneLoadingStarted?.Invoke();
-        string sceneName = dataProvider.GetData<string>();
-        var scene = SceneManager.LoadSceneAsync(sceneName);
-        scene.allowSceneActivation = false;
-        do
-        {
-            await Task.Delay(100);
-        }
-        while (scene.progress < 0.9f);
-        scene.allowSceneActivation = true;
+        int sceneID = dataProvider.GetData<int>();
+        SceneManager.LoadScene(sceneID);
     }
 
     public void Start()

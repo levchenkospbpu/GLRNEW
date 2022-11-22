@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
-using VContainer;
-using VContainer.Unity;
 
 public class CustomizationButton : MonoBehaviour
 {

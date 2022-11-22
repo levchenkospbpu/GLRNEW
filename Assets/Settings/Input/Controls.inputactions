@@ -31,7 +31,18 @@
                     "path": "<Touchscreen>/primaryTouch/press",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mobile",
+                    "action": "Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ea598b5-5106-47ab-abb0-24fa88fe3cf4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Mouse",
                     "action": "Press",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -42,7 +53,18 @@
                     "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mobile",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24c3cea1-1f20-454e-b68d-c05218aacfb5",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -50,5 +72,28 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Mobile",
+            "bindingGroup": "Mobile",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

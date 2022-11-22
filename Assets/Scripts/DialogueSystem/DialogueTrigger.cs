@@ -1,11 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Rendering.Toon;
-using UnityEditor.Search;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
