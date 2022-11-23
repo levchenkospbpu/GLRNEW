@@ -15,6 +15,7 @@ public class LocationPartyButton : MonoBehaviour
 
     private void ShowPartyPanel()
     {
-        _locationPanel.UIProvider.Show(typeof(PartyPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+        PartyPanel partyPanel = _locationPanel.UIProvider.Show(typeof(PartyPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform) as PartyPanel;
+        partyPanel.SetPrevPanelType(typeof(LocationPanel));
     }
 }

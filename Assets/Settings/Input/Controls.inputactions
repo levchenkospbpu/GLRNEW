@@ -2,7 +2,7 @@
     "name": "Controls",
     "maps": [
         {
-            "name": "Touch",
+            "name": "Player",
             "id": "77eabd41-8890-4bdf-9dab-c0e18e3cad9f",
             "actions": [
                 {
@@ -27,18 +27,18 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "8df99e7a-0cf0-4ea4-86b2-004d19a70f9a",
+                    "id": "bd55dec3-8acd-4bb3-98df-dd9cf3390140",
                     "path": "<Touchscreen>/primaryTouch/press",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
-                    "groups": "Mobile",
+                    "groups": "Phone",
                     "action": "Press",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6ea598b5-5106-47ab-abb0-24fa88fe3cf4",
+                    "id": "b522aee0-ba83-4f75-9731-2f7e40c9886e",
                     "path": "<Mouse>/leftButton",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
@@ -49,18 +49,18 @@
                 },
                 {
                     "name": "",
-                    "id": "8d62314f-298f-49f2-b693-630c457ffbba",
+                    "id": "9603fe6a-3e31-4aa0-8824-4531d96e5e9d",
                     "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mobile",
+                    "groups": "Phone",
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "24c3cea1-1f20-454e-b68d-c05218aacfb5",
+                    "id": "1b383d8b-6320-45b2-8a0a-2145f8a2ab56",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
@@ -74,8 +74,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Mobile",
-            "bindingGroup": "Mobile",
+            "name": "Phone",
+            "bindingGroup": "Phone",
             "devices": [
                 {
                     "devicePath": "<Touchscreen>",

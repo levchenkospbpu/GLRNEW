@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class PartyPanel : UIElement
     [field: SerializeField] public PartySlotButton[] PartySlotButtons { get; private set; }
     [field: SerializeField] public GameObject[] ObjectsToHideWhenChanging { get; private set; }
     [field: SerializeField] public CharacterInfoScrollView CharacterInfoScrollView { get; private set; }
+    private Type _prevPanelType;
 
     private void Start()
     {
@@ -58,5 +60,15 @@ public class PartyPanel : UIElement
     public void LoadCharacterButtons()
     {
         CharacterInfoScrollView.LoadCharacterButtons();
+    }
+
+    public void SetPrevPanelType(Type type)
+    {
+        _prevPanelType = type;
+    }
+
+    public Type GetPrevPanelType()
+    {
+        return _prevPanelType;
     }
 }

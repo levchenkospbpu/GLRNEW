@@ -14,6 +14,7 @@ public class HomePartyButton : MonoBehaviour
 
     private void ShowPartyPanel()
     {
-        _mainPanel.UIProvider.Show(typeof(PartyPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+        PartyPanel partyPanel = _mainPanel.UIProvider.Show(typeof(PartyPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform) as PartyPanel;
+        partyPanel.SetPrevPanelType(typeof(MainPanel));
     }
 }

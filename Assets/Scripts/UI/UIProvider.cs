@@ -19,13 +19,14 @@ public class UIProvider
         _objectResolver = resolver;
     }
 
-    public void Show(Type type, Transform parent)
+    public UIElement Show(Type type, Transform parent)
     {
         if (_uiElements.ContainsKey(type))
         {
             Object.Destroy(_currentUIElement?.gameObject);
-            _currentUIElement = _objectResolver.Instantiate(_uiElements[type], parent);
+            return _currentUIElement = _objectResolver.Instantiate(_uiElements[type], parent);
         }
+        else return new UIElement();
     }
 
     public UIElement Instantiate(Type type, Transform parent)

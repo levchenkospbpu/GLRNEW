@@ -24,7 +24,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     ""name"": ""Controls"",
     ""maps"": [
         {
-            ""name"": ""Touch"",
+            ""name"": ""Player"",
             ""id"": ""77eabd41-8890-4bdf-9dab-c0e18e3cad9f"",
             ""actions"": [
                 {
@@ -49,22 +49,44 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""8df99e7a-0cf0-4ea4-86b2-004d19a70f9a"",
+                    ""id"": ""bd55dec3-8acd-4bb3-98df-dd9cf3390140"",
                     ""path"": ""<Touchscreen>/primaryTouch/press"",
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Phone"",
                     ""action"": ""Press"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8d62314f-298f-49f2-b693-630c457ffbba"",
+                    ""id"": ""b522aee0-ba83-4f75-9731-2f7e40c9886e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9603fe6a-3e31-4aa0-8824-4531d96e5e9d"",
                     ""path"": ""<Touchscreen>/primaryTouch/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Phone"",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b383d8b-6320-45b2-8a0a-2145f8a2ab56"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
                     ""action"": ""Position"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -72,12 +94,35 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Phone"",
+            ""bindingGroup"": ""Phone"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Touchscreen>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Mouse"",
+            ""bindingGroup"": ""Mouse"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
-        // Touch
-        m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
-        m_Touch_Press = m_Touch.FindAction("Press", throwIfNotFound: true);
-        m_Touch_Position = m_Touch.FindAction("Position", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Press = m_Player.FindAction("Press", throwIfNotFound: true);
+        m_Player_Position = m_Player.FindAction("Position", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -134,34 +179,34 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Touch
-    private readonly InputActionMap m_Touch;
-    private ITouchActions m_TouchActionsCallbackInterface;
-    private readonly InputAction m_Touch_Press;
-    private readonly InputAction m_Touch_Position;
-    public struct TouchActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Press;
+    private readonly InputAction m_Player_Position;
+    public struct PlayerActions
     {
         private @Controls m_Wrapper;
-        public TouchActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Press => m_Wrapper.m_Touch_Press;
-        public InputAction @Position => m_Wrapper.m_Touch_Position;
-        public InputActionMap Get() { return m_Wrapper.m_Touch; }
+        public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Press => m_Wrapper.m_Player_Press;
+        public InputAction @Position => m_Wrapper.m_Player_Position;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(TouchActions set) { return set.Get(); }
-        public void SetCallbacks(ITouchActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_TouchActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Press.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnPress;
-                @Press.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnPress;
-                @Press.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnPress;
-                @Position.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnPosition;
-                @Position.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnPosition;
-                @Position.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnPosition;
+                @Press.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress;
+                @Press.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress;
+                @Press.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress;
+                @Position.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
+                @Position.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
+                @Position.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
             }
-            m_Wrapper.m_TouchActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Press.started += instance.OnPress;
@@ -173,8 +218,26 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             }
         }
     }
-    public TouchActions @Touch => new TouchActions(this);
-    public interface ITouchActions
+    public PlayerActions @Player => new PlayerActions(this);
+    private int m_PhoneSchemeIndex = -1;
+    public InputControlScheme PhoneScheme
+    {
+        get
+        {
+            if (m_PhoneSchemeIndex == -1) m_PhoneSchemeIndex = asset.FindControlSchemeIndex("Phone");
+            return asset.controlSchemes[m_PhoneSchemeIndex];
+        }
+    }
+    private int m_MouseSchemeIndex = -1;
+    public InputControlScheme MouseScheme
+    {
+        get
+        {
+            if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
+            return asset.controlSchemes[m_MouseSchemeIndex];
+        }
+    }
+    public interface IPlayerActions
     {
         void OnPress(InputAction.CallbackContext context);
         void OnPosition(InputAction.CallbackContext context);

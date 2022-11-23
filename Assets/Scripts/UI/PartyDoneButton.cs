@@ -21,6 +21,6 @@ public class PartyDoneButton : MonoBehaviour
 
     private void OpenLocationPanel()
     {
-        _partyPanel.UIProvider.Show(typeof(LocationPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+        _partyPanel.UIProvider.Show(_partyPanel.GetPrevPanelType(), GameObject.FindGameObjectWithTag("MainCanvas").transform);
     }
 }

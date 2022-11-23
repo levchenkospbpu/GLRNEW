@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
         if (_inTouch)
         {
             _holdingTime += Time.deltaTime;
-            SetTargetUnderTouch(_inputManager.Controls.Touch.Position.ReadValue<Vector2>());
+            SetTargetUnderTouch(_inputManager.Controls.Player.Position.ReadValue<Vector2>());
         }
         if (_inCollition)
         {

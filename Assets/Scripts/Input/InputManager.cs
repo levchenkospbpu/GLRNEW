@@ -28,15 +28,15 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        Controls.Touch.Press.started += ctx => StartTouch(ctx);
-        Controls.Touch.Press.canceled += ctx => EndTouch(ctx);
+        Controls.Player.Press.started += ctx => StartTouch(ctx);
+        Controls.Player.Press.canceled += ctx => EndTouch(ctx);
     }
 
     private void StartTouch(InputAction.CallbackContext context)
     { 
         if (OnStartTouch != null)
         {
-            OnStartTouch(Controls.Touch.Position.ReadValue<Vector2>());
+            OnStartTouch(Controls.Player.Position.ReadValue<Vector2>());
         }
     }
 
@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
     {
         if (OnEndTouch != null)
         {
-            OnEndTouch(Controls.Touch.Position.ReadValue<Vector2>());
+            OnEndTouch(Controls.Player.Position.ReadValue<Vector2>());
         }
     }
 }
