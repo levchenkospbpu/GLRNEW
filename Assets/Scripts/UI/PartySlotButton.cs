@@ -12,6 +12,7 @@ public class PartySlotButton : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(ShowCharacterInfo);
         GetComponent<Button>().onClick.AddListener(LoadCharacterButtons);
         GetComponent<Button>().onClick.AddListener(HideOtherObjects);
+        GetComponent<Button>().onClick.AddListener(StopSong);
     }
 
     public void Initialize()
@@ -19,9 +20,9 @@ public class PartySlotButton : MonoBehaviour
         switch (CharacterSlotType)
         {
             case CharacterSlotType.Bass:
-                if (_partyPanel.Party.CurrentBassID != -1)
+                if (_partyPanel.Party.TempBassID != -1)
                 {
-                    GetComponent<Image>().sprite = _partyPanel.Party.CharactersData.Characters[_partyPanel.Party.CurrentBassID].Banner;
+                    GetComponent<Image>().sprite = _partyPanel.Party.CharactersData.Characters[_partyPanel.Party.TempBassID].Banner;
                 }
                 else
                 {
@@ -29,9 +30,9 @@ public class PartySlotButton : MonoBehaviour
                 }
                 break;
             case CharacterSlotType.Drums:
-                if (_partyPanel.Party.CurrentDrumsID != -1)
+                if (_partyPanel.Party.TempDrumsID != -1)
                 {
-                    GetComponent<Image>().sprite = _partyPanel.Party.CharactersData.Characters[_partyPanel.Party.CurrentDrumsID].Banner;
+                    GetComponent<Image>().sprite = _partyPanel.Party.CharactersData.Characters[_partyPanel.Party.TempDrumsID].Banner;
                 }
                 else
                 {
@@ -62,6 +63,11 @@ public class PartySlotButton : MonoBehaviour
     private void LoadCharacterButtons()
     {
         _partyPanel.LoadCharacterButtons();
+    }
+
+    private void StopSong()
+    {
+        AudioManager.Instance.Stop();
     }
 }
 

@@ -6,7 +6,7 @@ using VContainer;
 
 public class LocationButton : MonoBehaviour
 {
-    [SerializeField] private int _sceneID;
+    [SerializeField] private string _sceneName;
     [SerializeField] private MapPanel _mapPanel;
 
     private void Start()
@@ -16,6 +16,6 @@ public class LocationButton : MonoBehaviour
 
     private void LoadScene()
     {
-        _mapPanel.ActionCaller.Raise(ActionType.LoadScene, new DataProvider(_sceneID));
+        _mapPanel.ActionCaller.Raise(ActionType.LoadScene, new DataProvider(_sceneName));
     }
 }

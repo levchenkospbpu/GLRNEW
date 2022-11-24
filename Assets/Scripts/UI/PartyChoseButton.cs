@@ -10,7 +10,6 @@ public class PartyChoseButton : MonoBehaviour
     private void Start()
     {
         GetComponent<Button>().onClick.AddListener(SetCurrentIDs);
-        GetComponent<Button>().onClick.AddListener(UpdatePartySlotsUI);
         GetComponent<Button>().onClick.AddListener(ShowOther);
         GetComponent<Button>().onClick.AddListener(HidePanel);
     }
@@ -18,11 +17,6 @@ public class PartyChoseButton : MonoBehaviour
     private void SetCurrentIDs()
     {
         _partyPanel.ActionCaller.Raise(ActionType.SetPartyCurrentIDs, new DataProvider());
-    }
-
-    private void UpdatePartySlotsUI()
-    {
-        _partyPanel.UpdatePartySlotsUI();
     }
 
     private void HidePanel()

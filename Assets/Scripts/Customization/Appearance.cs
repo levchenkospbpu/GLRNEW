@@ -18,16 +18,14 @@ public class Appearance : IStartable, IInitializable
     public int CurrentTopColorID { get; private set; }
     public int CurrentBottomColorID { get; private set; }
     public int CurrentShoesColorID { get; private set; }
-    public CustomSceneManager CustomSceneManager { get; private set; }
 
     private GameObject _player;
     private IActionRegister _actionRegister;
 
-    public Appearance(CustomizationData customizationData, IActionRegister actionRegister, CustomSceneManager customSceneManager)
+    public Appearance(CustomizationData customizationData, IActionRegister actionRegister)
     {
         CustomizationData = customizationData;
         _actionRegister = actionRegister;
-        CustomSceneManager = customSceneManager;
     }
 
     public void Initialize()
@@ -120,6 +118,5 @@ public class Appearance : IStartable, IInitializable
         _actionRegister.Register(ActionType.ChangeTopColor, SetTopColor);
         _actionRegister.Register(ActionType.ChangeBottomColor, SetBottomColor);
         _actionRegister.Register(ActionType.ChangeShoesColor, SetShoesColor);
-        CustomSceneManager.OnSceneLoaded += Initialize;
     }
 }

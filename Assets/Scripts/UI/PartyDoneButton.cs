@@ -12,6 +12,7 @@ public class PartyDoneButton : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(Save);
         GetComponent<Button>().onClick.AddListener(OpenLocationPanel);
+        GetComponent<Button>().onClick.AddListener(StopSong);
     }
 
     private void Save()
@@ -22,5 +23,10 @@ public class PartyDoneButton : MonoBehaviour
     private void OpenLocationPanel()
     {
         _partyPanel.UIProvider.Show(_partyPanel.GetPrevPanelType(), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+    }
+
+    private void StopSong()
+    {
+        AudioManager.Instance.Stop();
     }
 }

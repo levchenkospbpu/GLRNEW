@@ -42,5 +42,6 @@ public enum ActionType
     SetChangeableSlotType,
     SetChangeableCharacterID,
     SetPartyCurrentIDs,
-    SaveParty
+    SaveParty,
+    ResetIDs
 }

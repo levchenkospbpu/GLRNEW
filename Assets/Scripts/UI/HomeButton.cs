@@ -14,6 +14,6 @@ public class HomeButton : MonoBehaviour
 
     private void LoadHomeScene()
     {
-        _locationPanel.ActionCaller.Raise(ActionType.LoadScene, new DataProvider(0));
+        _locationPanel.ActionCaller.Raise(ActionType.LoadScene, new DataProvider("Home"));
     }
 }

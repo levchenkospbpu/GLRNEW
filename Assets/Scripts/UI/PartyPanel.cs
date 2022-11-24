@@ -3,24 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VContainer;
+using static UnityEditor.Rendering.FilterWindow;
 
 public class PartyPanel : UIElement
 {
     [Inject]
-    public UIProvider UIProvider { get; private set; }
+    public UIProvider UIProvider { get; protected set; }
     [Inject]
-    public IActionCaller ActionCaller { get; private set; }
+    public IActionCaller ActionCaller { get; protected set; }
     [Inject]
-    public Party Party { get; private set; }
+    public Party Party { get; protected set; }
     [field: SerializeField] public GameObject CharacterInfoPanel { get; private set; }
     [field: SerializeField] public PartySlotButton[] PartySlotButtons { get; private set; }
-    [field: SerializeField] public GameObject[] ObjectsToHideWhenChanging { get; private set; }
+    [field: SerializeField] public List<GameObject> ObjectsToHideWhenChanging { get; private set; }
     [field: SerializeField] public CharacterInfoScrollView CharacterInfoScrollView { get; private set; }
+    [field: SerializeField] public SongsPanel SongsPanel { get; private set; }
     private Type _prevPanelType;
 
     private void Start()
     {
         UpdatePartySlotsUI();
+        SongsPanel = UIProvider.Instantiate(typeof(SongsPanel), transform) as SongsPanel;
+        ObjectsToHideWhenChanging.Add(SongsPanel.gameObject);
+        LoadSongs();
     }
 
     public void UpdatePartySlotsUI()
@@ -29,6 +34,11 @@ public class PartyPanel : UIElement
         {
             partySlotButton.Initialize();
         }
+    }
+
+    public void LoadSongs()
+    {
+        SongsPanel.LoadSongButtons();
     }
 
     public void HideObjects()
@@ -45,6 +55,8 @@ public class PartyPanel : UIElement
         {
             obj.SetActive(true);
         }
+        UpdatePartySlotsUI();
+        LoadSongs();
     }
 
     public void HideCharacterInfo()
