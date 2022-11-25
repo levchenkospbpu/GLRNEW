@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcb56583bf90f54b8c53747c18908d2, type: 3}
   m_Name: Tobyo
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
-  <HP>k__BackingField: 15
-  <Atk>k__BackingField: 5
-  <Def>k__BackingField: 35
+  <Name>k__BackingField: Tobyo
+  <HP>k__BackingField: 500
+  <Atk>k__BackingField: 3
+  <Def>k__BackingField: 0
   <Songs>k__BackingField:
   - {fileID: 8300000, guid: 22e42c58b149c314188b1ad6323a5467, type: 3}
   - {fileID: 8300000, guid: 6019dfa387681a64ba0abdd05e92b263, type: 3}

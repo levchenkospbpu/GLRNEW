@@ -1058,6 +1058,7 @@ MonoBehaviour:
   - {fileID: 1411759697162207628}
   <CharacterInfoScrollView>k__BackingField: {fileID: 8292091349946073891}
   <SongsPanel>k__BackingField: {fileID: 0}
+  _startRhythmGameButton: {fileID: 2135262215787090095}
 --- !u!1 &5541720902382791613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,7 +1999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5662591092425654660
 RectTransform:
   m_ObjectHideFlags: 0

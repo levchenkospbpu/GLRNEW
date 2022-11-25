@@ -5,6 +5,10 @@ using VContainer;
 
 public class GetReadyPanel : PartyPanel
 {
-    [Inject]
-    private UIProvider qwe;
+    [SerializeField] private StartRhythmGameButton _startRhythmGameButton;
+
+    public void ShowGoButton()
+    {
+        _startRhythmGameButton.gameObject.SetActive(true);
+    }
 }

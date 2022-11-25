@@ -26,7 +26,7 @@ public class SongManager : MonoBehaviour
     public MidiFile MidiFile { get; private set; }
     [field: SerializeField] public float NoteTime { get; private set; }
 
-    [field: SerializeField] public Lane[] laneStarts { get; private set; }
+    [field: SerializeField] public Lane[] LaneStarts { get; private set; }
     [field: SerializeField] public float SongDelayInSeconds { get; private set; }
     [field: SerializeField] public double MarginOfError { get; private set; }
     [field: SerializeField] public int InputDelayInMilliseconds { get; private set; }
@@ -85,7 +85,7 @@ public class SongManager : MonoBehaviour
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
-        foreach (var lane in laneStarts) lane.SetTimeStamps(array);
+        foreach (var lane in LaneStarts) lane.SetTimeStamps(array);
 
         Invoke(nameof(StartSong), SongDelayInSeconds);
     }
@@ -98,5 +98,13 @@ public class SongManager : MonoBehaviour
     public double GetAudioSourceTime()
     {
         return (double)AudioSource.timeSamples / AudioSource.clip.frequency;
+    }
+
+    public void Stop()
+    {
+        foreach (Lane lane in LaneStarts)
+        {
+            Destroy(lane.gameObject);
+        }
     }
 }

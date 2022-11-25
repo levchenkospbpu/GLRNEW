@@ -21,8 +21,8 @@ public class CustomSceneManager : IStartable
     public void LoadScene(DataProvider dataProvider)
     {
         OnSceneLoadingStarted?.Invoke();
-        string sceneID = dataProvider.GetData<string>();
-        SceneManager.LoadScene(sceneID);
+        string sceneName = dataProvider.GetData<string>();
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Start()

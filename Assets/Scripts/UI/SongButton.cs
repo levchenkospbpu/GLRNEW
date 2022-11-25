@@ -8,13 +8,16 @@ public class SongButton : UIElement
 {
     private AudioClip _audioClip;
     private StopSongButton _stopSongButton;
+    private GetReadyPanel _getReadyPanel;
 
     private void Start()
     {
+        _getReadyPanel = FindObjectOfType<GetReadyPanel>();
         _stopSongButton = GetComponentInChildren<StopSongButton>();
         HideStopButton();
         GetComponent<Button>().onClick.AddListener(PlaySong);
         GetComponent<Button>().onClick.AddListener(ShowStopButton);
+        GetComponent<Button>().onClick.AddListener(ShowGoButton);
     }
 
     private void PlaySong()
@@ -45,5 +48,10 @@ public class SongButton : UIElement
     private void HideStopButton()
     {
         _stopSongButton.gameObject.SetActive(false);
+    }
+
+    private void ShowGoButton()
+    {
+        _getReadyPanel.ShowGoButton();
     }
 }

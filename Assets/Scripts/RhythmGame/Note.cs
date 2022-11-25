@@ -18,16 +18,8 @@ public class Note : MonoBehaviour
         double timeSinceInstantiated = SongManager.Instance.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.Instance.NoteTime));
 
-        
-        if (t > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            GetComponent<RectTransform>().offsetMin = new Vector2(0, Mathf.Lerp(Screen.height, 0, t));
-            GetComponent<RectTransform>().offsetMax = new Vector2(0, -Mathf.Lerp(-Screen.height, 0, t));
-            GetComponent<Image>().enabled = true;
-        }
+
+        GetComponent<RectTransform>().offsetMin = new Vector2(0, Screen.height * (1 - t));
+        GetComponent<RectTransform>().offsetMax = new Vector2(0, Screen.height * (1 - t));
     }
 }

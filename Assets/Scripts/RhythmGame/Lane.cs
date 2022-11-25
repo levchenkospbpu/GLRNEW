@@ -26,7 +26,7 @@ public class Lane : MonoBehaviour
             }
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (spawnIndex < timeStamps.Count)
@@ -42,7 +42,7 @@ public class Lane : MonoBehaviour
             }
         }
 
-        if (inputIndex < timeStamps.Count)
+        if (inputIndex < timeStamps.Count && inputIndex < notes.Count)
         {
             double timeStamp = timeStamps[inputIndex];
             double marginOfError = SongManager.Instance.MarginOfError;
@@ -52,34 +52,44 @@ public class Lane : MonoBehaviour
             {
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
-                    Hit();
-                    print($"Hit on {inputIndex} note");
-                    if (notes[inputIndex] != null)
+                    if (notes[inputIndex]?.gameObject != null)
                     {
+                        Hit();
+                        print($"Hit on {inputIndex} note");
                         Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
                     }
-                    inputIndex++;
                 }
                 else
                 {
-                    print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    if (notes[inputIndex]?.gameObject != null)
+                    {
+                        Miss();
+                        print($"Missed {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
+                    }
                 }
             }
-            if (timeStamp + marginOfError <= audioTime)
+            else if (timeStamp + marginOfError <= audioTime)
             {
-                Miss();
-                print($"Missed {inputIndex} note");
-                inputIndex++;
+                if (notes[inputIndex]?.gameObject != null)
+                {
+                    Miss();
+                    print($"Missed {inputIndex} note");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;
+                }
             }
         }       
     
     }
     private void Hit()
     {
-        ScoreManager.Hit();
+        ScoreManager.Instance.Hit();
     }
     private void Miss()
     {
-        ScoreManager.Miss();
+        ScoreManager.Instance.Miss();
     }
 }
