@@ -10,8 +10,6 @@ public class LocationLifetimeScope : LifetimeScope
 
     protected override void Configure(IContainerBuilder builder)
     {
-        builder.RegisterComponentInHierarchy<InputManager>();
-
         builder.RegisterInstance(_uiProviderConfig);
         builder.RegisterInstance(_customizationDataConfig);
         builder.RegisterInstance(_charactersDataConfig);

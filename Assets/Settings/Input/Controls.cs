@@ -28,18 +28,18 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""id"": ""77eabd41-8890-4bdf-9dab-c0e18e3cad9f"",
             ""actions"": [
                 {
-                    ""name"": ""Press"",
-                    ""type"": ""Button"",
-                    ""id"": ""04ad922c-ff22-4d19-9fa6-eac11795a301"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""02b535b3-c726-4550-b48e-ff4e3b91e3be"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Position"",
+                    ""name"": ""Look"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""db88d2ab-221e-40f0-81c7-a3569c2d24b9"",
+                    ""id"": ""a1239e26-6551-4c83-97d4-debb77b13367"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -49,80 +49,101 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""bd55dec3-8acd-4bb3-98df-dd9cf3390140"",
-                    ""path"": ""<Touchscreen>/primaryTouch/press"",
-                    ""interactions"": ""Press(behavior=2)"",
-                    ""processors"": """",
-                    ""groups"": ""Phone"",
-                    ""action"": ""Press"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b522aee0-ba83-4f75-9731-2f7e40c9886e"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": ""Press(behavior=2)"",
-                    ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""Press"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9603fe6a-3e31-4aa0-8824-4531d96e5e9d"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
+                    ""id"": ""481920e2-2177-4c76-ad05-7b8b6d7d016c"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Phone"",
-                    ""action"": ""Position"",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""4ecafa76-4757-4a7b-b83d-54be025a6c72"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a723d48c-234a-4683-8f1f-e6fac469b79d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""d8c2576f-0936-4bfd-973f-274cdc53be6b"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ef5eeb94-ca1a-44a3-a5f5-bc62fb723578"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""00f23b64-9fb4-44bb-9411-8a5426f296af"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""483667cd-7081-487d-93e9-0abe61b289aa"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1b383d8b-6320-45b2-8a0a-2145f8a2ab56"",
-                    ""path"": ""<Mouse>/position"",
+                    ""id"": ""056a3a75-089c-407c-9806-04ab8fe97f30"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""Position"",
+                    ""groups"": """",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": [
-        {
-            ""name"": ""Phone"",
-            ""bindingGroup"": ""Phone"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Touchscreen>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Mouse"",
-            ""bindingGroup"": ""Mouse"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Mouse>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        }
-    ]
+    ""controlSchemes"": []
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Press = m_Player.FindAction("Press", throwIfNotFound: true);
-        m_Player_Position = m_Player.FindAction("Position", throwIfNotFound: true);
+        m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -182,14 +203,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Press;
-    private readonly InputAction m_Player_Position;
+    private readonly InputAction m_Player_Movement;
+    private readonly InputAction m_Player_Look;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
         public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Press => m_Wrapper.m_Player_Press;
-        public InputAction @Position => m_Wrapper.m_Player_Position;
+        public InputAction @Movement => m_Wrapper.m_Player_Movement;
+        public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -199,47 +220,29 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Press.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress;
-                @Press.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress;
-                @Press.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPress;
-                @Position.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
-                @Position.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
-                @Position.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
+                @Movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Press.started += instance.OnPress;
-                @Press.performed += instance.OnPress;
-                @Press.canceled += instance.OnPress;
-                @Position.started += instance.OnPosition;
-                @Position.performed += instance.OnPosition;
-                @Position.canceled += instance.OnPosition;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-    private int m_PhoneSchemeIndex = -1;
-    public InputControlScheme PhoneScheme
-    {
-        get
-        {
-            if (m_PhoneSchemeIndex == -1) m_PhoneSchemeIndex = asset.FindControlSchemeIndex("Phone");
-            return asset.controlSchemes[m_PhoneSchemeIndex];
-        }
-    }
-    private int m_MouseSchemeIndex = -1;
-    public InputControlScheme MouseScheme
-    {
-        get
-        {
-            if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
-            return asset.controlSchemes[m_MouseSchemeIndex];
-        }
-    }
     public interface IPlayerActions
     {
-        void OnPress(InputAction.CallbackContext context);
-        void OnPosition(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }
