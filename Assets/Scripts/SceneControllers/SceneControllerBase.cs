@@ -1,23 +1,24 @@
 using System;
 using System.Collections.Generic;
-using Data.SceneActions;
-using SceneControllers.HomeScene;
+using System.Linq;
+using GameScripts;
 
 namespace SceneControllers
 {
     public abstract class SceneControllerBase : ISceneController
     {
-        protected readonly Dictionary<HomeActionType, Action> Actions = new();
+        protected readonly List<GameScriptBase> GameScripts = new();
 
         public abstract void Start();
 
-        protected void NextAction(HomeActionType type)
+        public void StartGameScript(Type type)
         {
-            if (!Actions.TryGetValue(type, out var action))
+            var script = GameScripts.FirstOrDefault(t => t.GetType() == type);
+            if (script == null)
             {
-                throw new KeyNotFoundException($"SceneController: Key {type} not found");
+                throw new Exception($"SceneController: Game Script {type} not found");
             }
-            action?.Invoke();
+            script.OnStart();
         }
     }
 }

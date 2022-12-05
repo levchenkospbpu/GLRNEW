@@ -1,15 +1,17 @@
 using System.Collections.Generic;
 using Customization;
-using Data.SceneActions;
+using SceneControllers;
 using UI;
 using UnityEngine;
 using VContainer;
 
-namespace SceneControllers.HomeScene
+namespace GameScripts
 {
-    public partial class HomeController
+    public class AvatarGameScript : GameScriptBase
     {
+        [Inject] private readonly ISceneController _sceneController;
         [Inject] private readonly CustomizationData _customizationData;
+        [Inject] private readonly UIProvider _uiProvider;
 
         private readonly List<GameObject> _items = new();
 
@@ -23,7 +25,7 @@ namespace SceneControllers.HomeScene
         private int _currentBottomColorID;
         private int _currentShoesColorID;
         
-        private void ShowAvatarPanel()
+        public override void OnStart()
         {
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerData>();
             
@@ -39,7 +41,7 @@ namespace SceneControllers.HomeScene
                 Initialize();
             }
         }
-
+        
         private void Initialize()
         {
             _currentHairId = PlayerPrefs.GetInt(PlayerPrefsKeys.AppearanceHairID, 0);
@@ -51,7 +53,7 @@ namespace SceneControllers.HomeScene
             
             HairHandler();
         }
-
+        
         private void ApplyHandler()
         {
             PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairID, _currentHairId);
@@ -61,7 +63,7 @@ namespace SceneControllers.HomeScene
             PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceBottomColorID, _currentBottomColorID);
             PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceShoesColorID, _currentShoesColorID);
             
-            NextAction(HomeActionType.MainPanel);
+            _sceneController.StartGameScript(typeof(MainPanelGameScript));
         }
 
         private void HairHandler()
@@ -145,6 +147,11 @@ namespace SceneControllers.HomeScene
                 Object.Destroy(item);
             }
             _items.Clear();
+        }
+
+        public override void OnDestroy()
+        {
+            
         }
     }
 }
