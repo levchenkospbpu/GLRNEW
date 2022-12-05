@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 4605214900615845778}
   - component: {fileID: 4234929804211819163}
   - component: {fileID: 6037077383329000328}
-  - component: {fileID: 4204523496431317982}
   - component: {fileID: 2993150674192448313}
   m_Layer: 5
   m_Name: HairButton
@@ -259,19 +258,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4204523496431317982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3456625428756072004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f8ffb7247d11e44926eab9e8be40a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterCreationPanel: {fileID: 8933557845453910977}
 --- !u!114 &2993150674192448313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +370,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10b924783a69f43970b0ce1ddccf26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ApplyButton>k__BackingField: {fileID: 116498973889607046}
+  <GenderButton>k__BackingField: {fileID: 2861903146105406368}
+  <HairButton>k__BackingField: {fileID: 6037077383329000328}
+  <HairColorButton>k__BackingField: {fileID: 4126855872751274672}
+  <SkinColorButton>k__BackingField: {fileID: 4107837888769421842}
+  <MaleButton>k__BackingField: {fileID: 237013382861255266}
+  <FemaleButton>k__BackingField: {fileID: 5642913552061683240}
+  <ScrollContent>k__BackingField: {fileID: 7968517548488447640}
+  <HairItemButton>k__BackingField: {fileID: 6384476815649155047, guid: e62a2e4ac8899e046be52f4b169ffdfe,
+    type: 3}
+  <HairColorItemButton>k__BackingField: {fileID: 0}
+  <SkinColorItemButton>k__BackingField: {fileID: 0}
+  <TopColorItemButton>k__BackingField: {fileID: 0}
+  <BottomColorItemButton>k__BackingField: {fileID: 0}
 --- !u!1 &3892088541732921864
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +531,6 @@ GameObject:
   - component: {fileID: 3317884929840701641}
   - component: {fileID: 34156040799031063}
   - component: {fileID: 237013382861255266}
-  - component: {fileID: 6584442617562029302}
   m_Layer: 5
   m_Name: MaleButton
   m_TagString: Untagged
@@ -642,18 +641,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6584442617562029302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4899663939176523899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d57773e0003ec44bafc5e310e3e1b1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5438780005978747071
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +788,6 @@ GameObject:
   - component: {fileID: 5465097119610743672}
   - component: {fileID: 1709932563877890334}
   - component: {fileID: 510352271005874782}
-  - component: {fileID: 8514381559556276195}
   - component: {fileID: 2027515014511811646}
   m_Layer: 5
   m_Name: ItemsScrollView
@@ -899,19 +885,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8514381559556276195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6133238659307112202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10a9495752245d4b93b4e053ef7b9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterCreationPanel: {fileID: 8933557845453910977}
 --- !u!114 &2027515014511811646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,7 +912,6 @@ GameObject:
   - component: {fileID: 6134787701970200048}
   - component: {fileID: 1818949058040823721}
   - component: {fileID: 4126855872751274672}
-  - component: {fileID: 6768956650974575841}
   - component: {fileID: 7736003210663927259}
   m_Layer: 5
   m_Name: HairColorButton
@@ -1051,19 +1023,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6768956650974575841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6240329989246445450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fcfed2a38a8f32478a15c268b21468b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterCreationPanel: {fileID: 8933557845453910977}
 --- !u!114 &7736003210663927259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1050,6 @@ GameObject:
   - component: {fileID: 2019653016805300924}
   - component: {fileID: 764023589635791499}
   - component: {fileID: 116498973889607046}
-  - component: {fileID: 5559477174036072873}
   - component: {fileID: 8548673435749938234}
   m_Layer: 5
   m_Name: ApplyButton
@@ -1203,19 +1161,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5559477174036072873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6452383932397289619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a9433ffd9604847bd2cca8d9e0c04a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterCreationPanel: {fileID: 8933557845453910977}
 --- !u!114 &8548673435749938234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,7 +1188,6 @@ GameObject:
   - component: {fileID: 642872044605647371}
   - component: {fileID: 2449483343267943395}
   - component: {fileID: 4107837888769421842}
-  - component: {fileID: 3744348253724650990}
   - component: {fileID: 4610776548514242530}
   m_Layer: 5
   m_Name: SkinColorButton
@@ -1355,19 +1299,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3744348253724650990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578743113353574872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d380b4fa1933d4a968fa686fa6ecdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterCreationPanel: {fileID: 8933557845453910977}
 --- !u!114 &4610776548514242530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,7 +1461,6 @@ GameObject:
   - component: {fileID: 2448206321024267845}
   - component: {fileID: 4541896749658984900}
   - component: {fileID: 5642913552061683240}
-  - component: {fileID: 1323236449994683917}
   m_Layer: 5
   m_Name: FemaleButton
   m_TagString: Untagged
@@ -1641,18 +1571,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1323236449994683917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6843929805041216810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdfa8a40e753a7d4697964bfd21bee27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7204421666764308475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1717,6 @@ GameObject:
   - component: {fileID: 7968517548488447640}
   - component: {fileID: 2299424890350723612}
   - component: {fileID: 2918664129893072145}
-  - component: {fileID: 8233571639585259011}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1865,18 +1782,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &8233571639585259011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7985758660558960613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413d7395d1f1a004296b37cd9f3343ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8566303791132689963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,7 +2064,6 @@ GameObject:
   - component: {fileID: 1625110034967441489}
   - component: {fileID: 6715572112106934472}
   - component: {fileID: 2861903146105406368}
-  - component: {fileID: 4213842718891670468}
   m_Layer: 5
   m_Name: GenderButton
   m_TagString: Untagged
@@ -2270,19 +2174,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4213842718891670468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9138729983629600409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624a3d3c29e915a499fb6c5bd1e09ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterCreationPanel: {fileID: 8933557845453910977}
 --- !u!1 &9174075467521532805
 GameObject:
   m_ObjectHideFlags: 0

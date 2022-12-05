@@ -24,12 +24,12 @@ public class CustomizationPanel : UIElement
 
     private void Start()
     {
-        StartHairID = Appearance.CurrentHairID;
-        StartHairColorID = Appearance.CurrentHairColorID;
-        StartSkinColorID = Appearance.CurrentSkinColorID;
-        StartTopColorID = Appearance.CurrentTopColorID;
-        StartBottomColorID = Appearance.CurrentBottomColorID;
-        StartShoesColorID = Appearance.CurrentShoesColorID;
+        // StartHairID = Appearance.CurrentHairID;
+        // StartHairColorID = Appearance.CurrentHairColorID;
+        // StartSkinColorID = Appearance.CurrentSkinColorID;
+        // StartTopColorID = Appearance.CurrentTopColorID;
+        // StartBottomColorID = Appearance.CurrentBottomColorID;
+        // StartShoesColorID = Appearance.CurrentShoesColorID;
         ItemsScrollView = GetComponentInChildren<CustomizationItemsScrollView>();
         CancelCustomizationPanel = GetComponentInChildren<CancelCustomizationPanel>();
         CancelCustomizationPanel.gameObject.SetActive(false);

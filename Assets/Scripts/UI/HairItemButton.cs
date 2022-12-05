@@ -1,34 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-public class HairItemButton : UIElement
+namespace UI
 {
-    [Inject]
-    private IActionCaller _actionCaller;
-    private int _id;
-
-    private void Start()
+    public class HairItemButton : UIElement
     {
-        GetComponent<Button>().onClick.AddListener(ChangeHair);
-        Initialize();
-    }
-
-    private void Initialize()
-    {
-        GetComponentInChildren<TextMeshProUGUI>().text = _id.ToString();
-    }
-
-    private void ChangeHair()
-    {
-        _actionCaller.Raise(ActionType.ChangeHair, new DataProvider(_id));
-    }
-
-    public void SetID(int value)
-    {
-        _id = value;
+        [field: SerializeField] public Button Button { private set; get; }
+        [field: SerializeField] public TextMeshProUGUI Text { private set; get; }
     }
 }

@@ -1,3 +1,4 @@
+using SceneControllers.HomeScene;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -23,7 +24,7 @@ public class HomeLifetimeScope : LifetimeScope
 
         builder.RegisterEntryPoint<Party>(Lifetime.Singleton).AsSelf();
         builder.RegisterEntryPoint<Appearance>(Lifetime.Singleton).AsSelf();
-        builder.RegisterEntryPoint<GameInitializer>(Lifetime.Singleton).AsSelf();
+        builder.RegisterEntryPoint<HomeController>(Lifetime.Singleton).AsSelf();
         builder.RegisterEntryPoint<CustomSceneManager>(Lifetime.Singleton).AsSelf();
     }
 }

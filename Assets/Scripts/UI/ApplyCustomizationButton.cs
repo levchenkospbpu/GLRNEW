@@ -15,12 +15,12 @@ public class ApplyCustomizationButton : MonoBehaviour
 
     private void SaveChanges()
     {
-        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairID, _customizationPanel.Appearance.CurrentHairID);
-        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairColorID, _customizationPanel.Appearance.CurrentHairColorID);
-        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceSkinColorID, _customizationPanel.Appearance.CurrentSkinColorID);
-        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceTopColorID, _customizationPanel.Appearance.CurrentTopColorID);
-        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceBottomColorID, _customizationPanel.Appearance.CurrentBottomColorID);
-        PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceShoesColorID, _customizationPanel.Appearance.CurrentShoesColorID);
+        // PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairID, _customizationPanel.Appearance.CurrentHairID);
+        // PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceHairColorID, _customizationPanel.Appearance.CurrentHairColorID);
+        // PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceSkinColorID, _customizationPanel.Appearance.CurrentSkinColorID);
+        // PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceTopColorID, _customizationPanel.Appearance.CurrentTopColorID);
+        // PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceBottomColorID, _customizationPanel.Appearance.CurrentBottomColorID);
+        // PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceShoesColorID, _customizationPanel.Appearance.CurrentShoesColorID);
     }
 
     private void ShowMainPanel()

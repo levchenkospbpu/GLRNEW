@@ -22,11 +22,11 @@ public class CustomizationItemsScrollView : MonoBehaviour
     public void LoadHairItems()
     {
         Clear();
-        for (int i = 0; i < _customizationPanel.Appearance.Hairs.Length; i++)
-        {
-            HairItemButton hairItemButton = _customizationPanel.UIProvider.Instantiate(typeof(HairItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as HairItemButton;
-            hairItemButton.SetID(i);
-        }
+        // for (int i = 0; i < _customizationPanel.Appearance.Hairs.Length; i++)
+        // {
+        //     HairItemButton hairItemButton = _customizationPanel.UIProvider.Instantiate(typeof(HairItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as HairItemButton;
+        //     hairItemButton.SetID(i);
+        // }
     }
 
     public void LoadHairColorItems()

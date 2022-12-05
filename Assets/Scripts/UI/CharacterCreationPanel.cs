@@ -1,24 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using VContainer;
+using UnityEngine.UI;
 
-public class CharacterCreationPanel : UIElement
+namespace UI
 {
-    [Inject]
-    public UIProvider UIProvider { get; private set; }
-    [Inject]
-    public Appearance Appearance { get; private set; }
-
-    public MaleButton MaleButton { get; private set; }
-    public FemaleButton FemaleButton { get; private set; }
-    public CharacterCreationItemsScrollView ItemsScrollView { get; private set; }
-
-    private void Start()
+    public class CharacterCreationPanel : UIElement
     {
-        //MaleButton = GetComponentInChildren<MaleButton>();
-        //FemaleButton = GetComponentInChildren<FemaleButton>();
-        ItemsScrollView = GetComponentInChildren<CharacterCreationItemsScrollView>();
-        //ItemsScrollView.gameObject.SetActive(false);
+        [field: Header("Buttons")]
+        [field: SerializeField] public Button ApplyButton { private set; get; }
+        [field: SerializeField] public Button GenderButton { private set; get; }
+        [field: SerializeField] public Button HairButton { private set; get; }
+        [field: SerializeField] public Button HairColorButton { private set; get; }
+        [field: SerializeField] public Button SkinColorButton { private set; get; }
+        [field: SerializeField] public Button MaleButton { private set; get; }
+        [field: SerializeField] public Button FemaleButton { private set; get; }
+        
+        [field: Header("References")]
+        [field: SerializeField] public Transform ScrollContent { private set; get; }
+        
+        [field: Header("Prefabs")]
+        [field: SerializeField] public GameObject HairItemButton { private set; get; }
+        [field: SerializeField] public GameObject HairColorItemButton { private set; get; }
+        [field: SerializeField] public GameObject SkinColorItemButton { private set; get; }
+        [field: SerializeField] public GameObject TopColorItemButton { private set; get; }
+        [field: SerializeField] public GameObject BottomColorItemButton { private set; get; }
     }
 }

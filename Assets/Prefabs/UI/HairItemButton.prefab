@@ -271,6 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc502dddcfaaeda4dafdc42ca3a5e087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Button>k__BackingField: {fileID: 8719882946510316202}
+  <Text>k__BackingField: {fileID: 6502066017183486982}
 --- !u!114 &1781802559078554936
 MonoBehaviour:
   m_ObjectHideFlags: 0
