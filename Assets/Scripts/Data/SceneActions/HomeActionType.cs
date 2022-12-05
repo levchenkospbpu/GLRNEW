@@ -1,4 +1,4 @@
-namespace SceneControllers.HomeScene
+namespace Data.SceneActions
 {
     public enum HomeActionType
     {

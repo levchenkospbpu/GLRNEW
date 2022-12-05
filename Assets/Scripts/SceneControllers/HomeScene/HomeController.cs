@@ -1,3 +1,4 @@
+using Data.SceneActions;
 using VContainer;
 
 namespace SceneControllers.HomeScene

@@ -380,8 +380,10 @@ MonoBehaviour:
   <ScrollContent>k__BackingField: {fileID: 7968517548488447640}
   <HairItemButton>k__BackingField: {fileID: 6384476815649155047, guid: e62a2e4ac8899e046be52f4b169ffdfe,
     type: 3}
-  <HairColorItemButton>k__BackingField: {fileID: 0}
-  <SkinColorItemButton>k__BackingField: {fileID: 0}
+  <HairColorItemButton>k__BackingField: {fileID: 8482357817561545641, guid: dece9aadd053d0246b300cf76c399811,
+    type: 3}
+  <SkinColorItemButton>k__BackingField: {fileID: 8482357817561545641, guid: 4cd95759e4afe0a41925639a0d0ef32e,
+    type: 3}
   <TopColorItemButton>k__BackingField: {fileID: 0}
   <BottomColorItemButton>k__BackingField: {fileID: 0}
 --- !u!1 &3892088541732921864

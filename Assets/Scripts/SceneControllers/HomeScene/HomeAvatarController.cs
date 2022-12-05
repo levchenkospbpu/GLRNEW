@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Customization;
+using Data.SceneActions;
 using UI;
 using UnityEngine;
 using VContainer;
@@ -81,6 +82,8 @@ namespace SceneControllers.HomeScene
                     _player.Hair[index].gameObject.SetActive(true);
                     _currentHairId = index;
                 });
+                
+                _items.Add(obj);
             }
         }
 
@@ -90,8 +93,20 @@ namespace SceneControllers.HomeScene
             for (var i = 0; i < _customizationData.HairMaterials.Length; i++)
             {
                 var index = i;
+
+                var obj = Object.Instantiate(_characterCreationPanel.HairColorItemButton, _characterCreationPanel.ScrollContent);
+                var script = obj.GetComponent<HairColorItemButton>();
+                script.Image.color = _customizationData.HairMaterials[index].color;
+                script.Button.onClick.AddListener(() =>
+                {
+                    foreach (var hair in _player.Hair)
+                    {
+                        hair.material = _customizationData.HairMaterials[index];
+                    }
+                    _currentHairColorID = index;
+                });
                 
-                
+                _items.Add(obj);
             }
         }
 
@@ -102,8 +117,24 @@ namespace SceneControllers.HomeScene
             for (var i = 0; i < _customizationData.SkinMaterials.Length; i++)
             {
                 var index = i;
+
+                var obj = Object.Instantiate(_characterCreationPanel.SkinColorItemButton, _characterCreationPanel.ScrollContent);
+                var script = obj.GetComponent<SkinColorItemButton>();
+                script.Image.color = _customizationData.SkinMaterials[index].color;
+                script.Button.onClick.AddListener(() =>
+                {
+                    var bodyMaterials = _player.Body.materials;
+                    bodyMaterials[0] = _customizationData.SkinMaterials[index];
+                    _player.Body.materials = bodyMaterials;
+
+                    var faceMaterials = _player.Face.materials;
+                    faceMaterials[3] = _customizationData.SkinMaterials[index];
+                    _player.Face.materials = faceMaterials;
+                    
+                    _currentSkinColorID = index;
+                });
                 
-                
+                _items.Add(obj);
             }
         }
 

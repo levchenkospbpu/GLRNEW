@@ -1,3 +1,4 @@
+using Data.SceneActions;
 using UnityEngine;
 
 namespace SceneControllers.HomeScene

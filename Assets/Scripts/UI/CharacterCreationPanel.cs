@@ -7,13 +7,10 @@ namespace UI
     {
         [field: Header("Buttons")]
         [field: SerializeField] public Button ApplyButton { private set; get; }
-        [field: SerializeField] public Button GenderButton { private set; get; }
         [field: SerializeField] public Button HairButton { private set; get; }
         [field: SerializeField] public Button HairColorButton { private set; get; }
         [field: SerializeField] public Button SkinColorButton { private set; get; }
-        [field: SerializeField] public Button MaleButton { private set; get; }
-        [field: SerializeField] public Button FemaleButton { private set; get; }
-        
+
         [field: Header("References")]
         [field: SerializeField] public Transform ScrollContent { private set; get; }
         
@@ -21,7 +18,5 @@ namespace UI
         [field: SerializeField] public GameObject HairItemButton { private set; get; }
         [field: SerializeField] public GameObject HairColorItemButton { private set; get; }
         [field: SerializeField] public GameObject SkinColorItemButton { private set; get; }
-        [field: SerializeField] public GameObject TopColorItemButton { private set; get; }
-        [field: SerializeField] public GameObject BottomColorItemButton { private set; get; }
     }
 }

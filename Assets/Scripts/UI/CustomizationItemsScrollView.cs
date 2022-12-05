@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
 public class CustomizationItemsScrollView : MonoBehaviour
@@ -21,7 +22,7 @@ public class CustomizationItemsScrollView : MonoBehaviour
 
     public void LoadHairItems()
     {
-        Clear();
+        // Clear();
         // for (int i = 0; i < _customizationPanel.Appearance.Hairs.Length; i++)
         // {
         //     HairItemButton hairItemButton = _customizationPanel.UIProvider.Instantiate(typeof(HairItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as HairItemButton;
@@ -31,22 +32,22 @@ public class CustomizationItemsScrollView : MonoBehaviour
 
     public void LoadHairColorItems()
     {
-        Clear();
-        for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.HairMaterials.Length; i++)
-        {
-            HairColorItemButton hairColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(HairColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as HairColorItemButton;
-            hairColorItemButton.SetID(i);
-        }
+        // Clear();
+        // for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.HairMaterials.Length; i++)
+        // {
+        //     HairColorItemButton hairColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(HairColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as HairColorItemButton;
+        //     hairColorItemButton.SetID(i);
+        // }
     }
 
     public void LoadSkinColorItems()
     {
-        Clear();
-        for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.SkinMaterials.Length; i++)
-        {
-            SkinColorItemButton skinColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(SkinColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as SkinColorItemButton;
-            skinColorItemButton.SetID(i);
-        }
+        // Clear();
+        // for (int i = 0; i < _customizationPanel.Appearance.CustomizationData.SkinMaterials.Length; i++)
+        // {
+        //     SkinColorItemButton skinColorItemButton = _customizationPanel.UIProvider.Instantiate(typeof(SkinColorItemButton), GetComponentInChildren<CustomizationItemsContent>().gameObject.transform) as SkinColorItemButton;
+        //     skinColorItemButton.SetID(i);
+        // }
     }
 
     public void LoadTopColorItems()
