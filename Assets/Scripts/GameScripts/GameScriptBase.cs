@@ -2,7 +2,8 @@ namespace GameScripts
 {
     public abstract class GameScriptBase : IGameScript
     {
-        protected bool IsEnabled;
+        public bool IsEnabled { get; set; }
+        
         public abstract void OnStart();
         public abstract void OnDestroy();
 

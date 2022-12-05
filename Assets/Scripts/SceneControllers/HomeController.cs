@@ -25,6 +25,8 @@ namespace SceneControllers
             var mainPanelGameScript = new MainPanelGameScript();
             _containerBuilder.RegisterInstance(mainPanelGameScript).AsSelf();
             GameScripts.Add(mainPanelGameScript);
+            
+            StartGameScript(typeof(AuthorizationGameScript));
         }
     }
 }
