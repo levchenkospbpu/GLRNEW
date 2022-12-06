@@ -1,7 +1,7 @@
+using UI;
 using UnityEngine;
-using VContainer;
 
-namespace GameScripts
+namespace States
 {
     public class MainPanelState : State
     {

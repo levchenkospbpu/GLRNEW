@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,34 +6,37 @@ using VContainer;
 using VContainer.Unity;
 using Object = UnityEngine.Object;
 
-public class UIProvider
+namespace UI
 {
-    private Dictionary<Type, UIElement> _uiElements;
-    private UIElement _currentUIElement;
-    private IObjectResolver _objectResolver;
-
-    public UIProvider(UIProviderConfig uiProviderConfig, IObjectResolver resolver)
+    public class UIProvider
     {
-        _uiElements = uiProviderConfig.UIPrefabs.ToDictionary(x => x.GetType(), y => y);
-        _objectResolver = resolver;
-    }
+        private Dictionary<Type, UIElement> _uiElements;
+        private UIElement _currentUIElement;
+        private IObjectResolver _objectResolver;
 
-    public UIElement Show(Type type, Transform parent)
-    {
-        if (_uiElements.ContainsKey(type))
+        public UIProvider(UIProviderConfig uiProviderConfig, IObjectResolver resolver)
         {
-            Object.Destroy(_currentUIElement?.gameObject);
-            return _currentUIElement = _objectResolver.Instantiate(_uiElements[type], parent);
+            _uiElements = uiProviderConfig.UIPrefabs.ToDictionary(x => x.GetType(), y => y);
+            _objectResolver = resolver;
         }
-        else return new UIElement();
-    }
 
-    public UIElement Instantiate(Type type, Transform parent)
-    {
-        if (_uiElements.ContainsKey(type))
+        public UIElement Show(Type type, Transform parent)
         {
-            return _objectResolver.Instantiate(_uiElements[type], parent);
+            if (_uiElements.ContainsKey(type))
+            {
+                Object.Destroy(_currentUIElement?.gameObject);
+                return _currentUIElement = _objectResolver.Instantiate(_uiElements[type], parent);
+            }
+            else return new UIElement();
         }
-        else return new UIElement();
+
+        public UIElement Instantiate(Type type, Transform parent)
+        {
+            if (_uiElements.ContainsKey(type))
+            {
+                return _objectResolver.Instantiate(_uiElements[type], parent);
+            }
+            else return new UIElement();
+        }
     }
 }

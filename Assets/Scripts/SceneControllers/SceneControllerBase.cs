@@ -1,4 +1,4 @@
-using GameScripts;
+using States;
 using VContainer;
 
 namespace SceneControllers
@@ -19,6 +19,7 @@ namespace SceneControllers
         {
             _previousState?.End();
             var state = _resolver.Resolve<T>();
+            _previousState = state;
             state.Enter();
             return state;
         }

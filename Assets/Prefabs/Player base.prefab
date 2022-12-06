@@ -4295,7 +4295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3750569211408771709}
   - component: {fileID: 4559721445692354752}
-  - component: {fileID: 4101472676182821987}
+  - component: {fileID: 6735261540685811713}
   m_Layer: 0
   m_Name: Player base
   m_TagString: Player
@@ -4342,7 +4342,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4101472676182821987
+--- !u!114 &6735261540685811713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

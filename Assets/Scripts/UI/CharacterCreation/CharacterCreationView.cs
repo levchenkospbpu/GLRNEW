@@ -1,9 +1,10 @@
+using Common.MVP;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.CharacterCreation
 {
-    public class CharacterCreationPanel : UIElement
+    public class CharacterCreationView : BaseView
     {
         [field: Header("Buttons")]
         [field: SerializeField] public Button ApplyButton { private set; get; }

@@ -1,8 +1,7 @@
 using SceneControllers;
 using UnityEngine;
-using VContainer;
 
-namespace GameScripts
+namespace States
 {
     public class AuthorizationState : State
     {
@@ -19,7 +18,6 @@ namespace GameScripts
 
             if (string.IsNullOrEmpty(accessToken))
             {
-                PlayerPrefs.SetString(PlayerPrefsKeys.AccessToken, Random.Range(0,100).ToString());
                 _sceneController.ChangeState<AvatarState>();
             }
             else

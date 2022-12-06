@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 5698447655531958743}
   - component: {fileID: 5910098793568873923}
   - component: {fileID: 4810064438222914809}
-  - component: {fileID: 8933557845453910977}
+  - component: {fileID: 1350666674807288766}
   m_Layer: 5
   m_Name: CharacterCreationPanel
   m_TagString: Untagged
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8933557845453910977
+--- !u!114 &1350666674807288766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -371,12 +371,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ApplyButton>k__BackingField: {fileID: 116498973889607046}
-  <GenderButton>k__BackingField: {fileID: 2861903146105406368}
   <HairButton>k__BackingField: {fileID: 6037077383329000328}
   <HairColorButton>k__BackingField: {fileID: 4126855872751274672}
   <SkinColorButton>k__BackingField: {fileID: 4107837888769421842}
-  <MaleButton>k__BackingField: {fileID: 237013382861255266}
-  <FemaleButton>k__BackingField: {fileID: 5642913552061683240}
   <ScrollContent>k__BackingField: {fileID: 7968517548488447640}
   <HairItemButton>k__BackingField: {fileID: 6384476815649155047, guid: e62a2e4ac8899e046be52f4b169ffdfe,
     type: 3}
@@ -384,8 +381,6 @@ MonoBehaviour:
     type: 3}
   <SkinColorItemButton>k__BackingField: {fileID: 8482357817561545641, guid: 4cd95759e4afe0a41925639a0d0ef32e,
     type: 3}
-  <TopColorItemButton>k__BackingField: {fileID: 0}
-  <BottomColorItemButton>k__BackingField: {fileID: 0}
 --- !u!1 &3892088541732921864
 GameObject:
   m_ObjectHideFlags: 0

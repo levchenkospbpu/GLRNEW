@@ -1,4 +1,4 @@
-namespace GameScripts
+namespace States
 {
     public interface IState
     {

@@ -6,6 +6,7 @@ using UnityEngine;
 using Story = Ink.Runtime.Story;
 using Choice = Ink.Runtime.Choice;
 using System;
+using UI;
 using VContainer;
 using VContainer.Unity;
 

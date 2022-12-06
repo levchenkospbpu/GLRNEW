@@ -1,4 +1,4 @@
-using GameScripts;
+using States;
 using VContainer.Unity;
 
 namespace SceneControllers
