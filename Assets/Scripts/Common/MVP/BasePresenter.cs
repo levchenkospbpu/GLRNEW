@@ -8,7 +8,8 @@ namespace Common.MVP
         private readonly Transform _parent;
         
         private GameObject _instance;
-        
+        private bool _isEnabled;
+
         protected TView View;
         protected TModel Model;
 
@@ -20,9 +21,12 @@ namespace Common.MVP
 
         public void Enable(TModel model = null)
         {
+            if (_isEnabled) return;
+            
             _instance = Object.Instantiate(_prefab, _parent);
             View = _instance.GetComponent<TView>();
             Model = model;
+            _isEnabled = true;
 
             OnEnable();
         }
@@ -35,6 +39,8 @@ namespace Common.MVP
         public void Disable()
         {
             Object.Destroy(_instance);
+            _isEnabled = false;
+            
             OnDisable();
         }
 

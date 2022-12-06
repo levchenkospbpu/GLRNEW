@@ -570,7 +570,6 @@ GameObject:
   - component: {fileID: 1420624998889851097}
   - component: {fileID: 1420624998889851098}
   - component: {fileID: 1420624998889851099}
-  - component: {fileID: 1420624998889851096}
   - component: {fileID: 1420624998889851095}
   - component: {fileID: 160258332106476633}
   m_Layer: 5
@@ -683,19 +682,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1420624998889851096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420624998889851101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdcf92cd814da7d47b53ecd40f689af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainPanel: {fileID: -3243768811322582127}
 --- !u!114 &1420624998889851095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,7 +723,6 @@ GameObject:
   - component: {fileID: 1420624999024732954}
   - component: {fileID: 1420624999024732955}
   - component: {fileID: 1420624999024732956}
-  - component: {fileID: 1420624999024732953}
   - component: {fileID: 1420624999024732952}
   - component: {fileID: 4488528824467944105}
   m_Layer: 5
@@ -850,19 +835,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1420624999024732953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420624999024732958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cba9fa86e7457c9418339c0765b20062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainPanel: {fileID: -3243768811322582127}
 --- !u!114 &1420624999024732952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,7 +877,6 @@ GameObject:
   - component: {fileID: 1420624999193966274}
   - component: {fileID: 1420624999193966275}
   - component: {fileID: 1420624999193966303}
-  - component: {fileID: 7210347766940781676}
   - component: {fileID: 766202825668292192}
   m_Layer: 5
   m_Name: PartyButton
@@ -1031,19 +1002,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1
---- !u!114 &7210347766940781676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420624999193966277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06a7cd42efed5f4479c60c3ff102b964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainPanel: {fileID: -3243768811322582127}
 --- !u!114 &766202825668292192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1163,7 @@ GameObject:
   - component: {fileID: 2040488079643207606}
   - component: {fileID: 4205825159755183703}
   - component: {fileID: 2086375650110484326}
-  - component: {fileID: -3243768811322582127}
+  - component: {fileID: 8786298121561262301}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -1275,7 +1233,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-3243768811322582127
+--- !u!114 &8786298121561262301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1284,6 +1242,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4485291112812946284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 954c1225cb9814944aba892bddc89596, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f41961ada484f82ad87852d4a20045e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CustomizationButton>k__BackingField: {fileID: 1420624998889851099}
+  <MapButton>k__BackingField: {fileID: 1420624999024732956}
+  <PartyButton>k__BackingField: {fileID: 1420624999193966275}

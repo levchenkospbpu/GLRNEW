@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterCreation: {fileID: 3581072021557549826, guid: 9cf6b5d431410534c8742ad8a3ca8470,
     type: 3}
+  HomeMainPanel: {fileID: 4485291112812946284, guid: 51587b634d171b141add6a72267f1002,
+    type: 3}
+  HomeCustomizationPanel: {fileID: 3581072021557549826, guid: 8eefeadf7fe22ff4a8482f8d5a9e98f1,
+    type: 3}
+  ConfirmationPopup: {fileID: 4729585883218174388, guid: 8fc7b1b96d0d6a14ab74cf5815fd7378,
+    type: 3}
   <UIPrefabs>k__BackingField:
-  - {fileID: -1670773565792715182, guid: 8eefeadf7fe22ff4a8482f8d5a9e98f1, type: 3}
   - {fileID: -366192294970685867, guid: 4ef74bda1371b4145a0fae3a4e5cef06, type: 3}
   - {fileID: 6655105087795230566, guid: 0e7cf61281bdb6640bbc639baa2116d0, type: 3}
-  - {fileID: -3243768811322582127, guid: 51587b634d171b141add6a72267f1002, type: 3}
-  - {fileID: -7903001531538577868, guid: dece9aadd053d0246b300cf76c399811, type: 3}
-  - {fileID: -1231250361701020785, guid: e62a2e4ac8899e046be52f4b169ffdfe, type: 3}
-  - {fileID: 4956909462161225845, guid: 4cd95759e4afe0a41925639a0d0ef32e, type: 3}
-  - {fileID: -7643772243624502248, guid: 2f179c35e7d382b4bb629d7b08f5b3ca, type: 3}
-  - {fileID: 306225978996009082, guid: fc8d0843034ee644b9364460d0af5ff5, type: 3}
-  - {fileID: -2100849544137566578, guid: 488d29e18c370cb46837f04a3beb6629, type: 3}
   - {fileID: 7368429349195470093, guid: 8cbc672616ff01d4e81e1e03155f98c4, type: 3}
   - {fileID: 641134303915829039, guid: 524775eae44f08f43a8fcb4d6b2ee0e7, type: 3}
   - {fileID: 295148688840618149, guid: 0983a08f3ed8d1848adeaf7459bc6fe0, type: 3}

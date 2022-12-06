@@ -1,6 +1,7 @@
 using Customization;
+using Customization.Data;
 using SceneControllers;
-using States;
+using States.HomeScene;
 using UI;
 using UI.Canvas;
 using UnityEngine;
@@ -34,6 +35,9 @@ namespace DI
             builder.Register<AuthorizationState>(Lifetime.Singleton);
             builder.Register<AvatarState>(Lifetime.Singleton);
             builder.Register<MainPanelState>(Lifetime.Singleton);
+            builder.Register<CustomizationPanelState>(Lifetime.Singleton);
+            builder.Register<MapPanelState>(Lifetime.Singleton);
+            builder.Register<PartyPanelState>(Lifetime.Singleton);
 
             builder.RegisterEntryPoint<Party>().AsSelf();
             builder.RegisterEntryPoint<Appearance>().AsSelf();

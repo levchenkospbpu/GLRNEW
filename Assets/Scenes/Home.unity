@@ -554,7 +554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911398270}
   m_Layer: 2
-  m_Name: Notifications
+  m_Name: Popups
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Screens>k__BackingField: {fileID: 1603180537}
-  <Notifications>k__BackingField: {fileID: 911398270}
+  <Popups>k__BackingField: {fileID: 911398270}
 --- !u!1 &1424606106
 GameObject:
   m_ObjectHideFlags: 0
