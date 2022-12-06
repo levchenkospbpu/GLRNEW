@@ -3,23 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using VContainer;
 using VContainer.Unity;
 using Object = UnityEngine.Object;
 
 public class UIProvider
 {
     private Dictionary<Type, UIElement> _uiElements;
+    private UIElement _currentUIElement;
+    private IObjectResolver _objectResolver;
 
-    public UIProvider(UIProviderConfig uiProviderConfig)
+    public UIProvider(UIProviderConfig uiProviderConfig, IObjectResolver resolver)
     {
         _uiElements = uiProviderConfig.UIPrefabs.ToDictionary(x => x.GetType(), y => y);
+        _objectResolver = resolver;
     }
 
-    public void Show(Type type, Transform parent)
+    public UIElement Show(Type type, Transform parent)
     {
         if (_uiElements.ContainsKey(type))
         {
-            Object.Instantiate(_uiElements[type], parent);
+            Object.Destroy(_currentUIElement?.gameObject);
+            return _currentUIElement = _objectResolver.Instantiate(_uiElements[type], parent);
         }
+        else return new UIElement();
+    }
+
+    public UIElement Instantiate(Type type, Transform parent)
+    {
+        if (_uiElements.ContainsKey(type))
+        {
+            return _objectResolver.Instantiate(_uiElements[type], parent);
+        }
+        else return new UIElement();
     }
 }
