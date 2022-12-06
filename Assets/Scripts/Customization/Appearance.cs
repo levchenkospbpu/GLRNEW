@@ -5,7 +5,7 @@ namespace Customization
 {
     public class Appearance : IInitializable
     {
-        private readonly CustomizationData _customizationData;
+        private readonly CustomizationDataContainer _customizationData;
         private readonly PlayerData _playerData;
         
         public int CurrentHairId { private set; get; }
@@ -15,7 +15,7 @@ namespace Customization
         public int CurrentBottomColorID { private set; get; }
         public int CurrentShoesColorID { private set; get; }
 
-        public Appearance(CustomizationData customizationData, PlayerData playerData)
+        public Appearance(CustomizationDataContainer customizationData, PlayerData playerData)
         {
             _customizationData = customizationData;
             _playerData = playerData;
@@ -87,7 +87,7 @@ namespace Customization
         {
             foreach (var hair in _playerData.Hair)
             {
-                hair.material = _customizationData.HairMaterials[id];
+                hair.material = _customizationData.HairMaterals[id];
             }
 
             CurrentHairColorID = id;

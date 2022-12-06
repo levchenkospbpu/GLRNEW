@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace Customization.Data
+namespace Customization
 {
     [CreateAssetMenu(fileName = "NewCustomizationDataConfig", menuName = "Data/CustomizationDataConfig")]
-    public class CustomizationDataConfig : ScriptableObject
+    public class CustomizationDataContainer : ScriptableObject
     {
         [field: SerializeField] public Material[] HairMaterals { get; private set; }
         [field: SerializeField] public Material[] SkinMaterials { get; private set; }

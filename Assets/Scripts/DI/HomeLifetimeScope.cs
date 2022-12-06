@@ -1,5 +1,4 @@
 using Customization;
-using Customization.Data;
 using SceneControllers;
 using States.HomeScene;
 using UI;
@@ -15,7 +14,7 @@ namespace DI
         [SerializeField] private PlayerData _playerData;
         [SerializeField] private UiCanvasData _uiCanvasData;
         [SerializeField] private UIProviderConfig _uiProviderConfig;
-        [SerializeField] private CustomizationDataConfig _customizationDataConfig;
+        [SerializeField] private CustomizationDataContainer customizationDataContainer;
         [SerializeField] private CharactersDataConfig _charactersDataConfig;
 
         protected override void Configure(IContainerBuilder builder)
@@ -23,10 +22,9 @@ namespace DI
             builder.RegisterInstance(_playerData);
             builder.RegisterInstance(_uiCanvasData);
             builder.RegisterInstance(_uiProviderConfig);
-            builder.RegisterInstance(_customizationDataConfig);
+            builder.RegisterInstance(customizationDataContainer);
             builder.RegisterInstance(_charactersDataConfig);
-
-            builder.Register<CustomizationData>(Lifetime.Singleton);
+            
             builder.Register<CharactersData>(Lifetime.Singleton);
             builder.Register<UIProvider>(Lifetime.Singleton);
 

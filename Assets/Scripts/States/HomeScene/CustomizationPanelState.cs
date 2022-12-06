@@ -12,7 +12,7 @@ namespace States.HomeScene
     {
         private readonly ISceneController _sceneController;
         private readonly PlayerData _playerData;
-        private readonly CustomizationData _customizationData;
+        private readonly CustomizationDataContainer _customizationData;
         private readonly Appearance _appearance;
 
         private readonly HomeCustomizationPanelPresenter _homeCustomizationPanelPresenter;
@@ -24,7 +24,7 @@ namespace States.HomeScene
         private int _currentBottomColorID;
         private int _currentShoesColorID;
         
-        public CustomizationPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, PlayerData playerData, CustomizationData customizationData, Appearance appearance)
+        public CustomizationPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, PlayerData playerData, CustomizationDataContainer customizationData, Appearance appearance)
         {
             _sceneController = sceneController;
             _playerData = playerData;
@@ -42,7 +42,7 @@ namespace States.HomeScene
             _currentBottomColorID = _appearance.CurrentBottomColorID;
             _currentShoesColorID = _appearance.CurrentShoesColorID;
             
-            _homeCustomizationPanelPresenter.Enable(new HomeCustomizationPanelModel(_customizationData.HairMaterials, _playerData.Hair, _customizationData.ClothesMaterials));
+            _homeCustomizationPanelPresenter.Enable(new HomeCustomizationPanelModel(_customizationData.HairMaterals, _playerData.Hair, _customizationData.ClothesMaterials));
             
             _homeCustomizationPanelPresenter.OnCancelButton += () =>
             {

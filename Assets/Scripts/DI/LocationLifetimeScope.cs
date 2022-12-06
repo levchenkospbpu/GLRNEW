@@ -1,5 +1,4 @@
 using Customization;
-using Customization.Data;
 using UI;
 using UnityEngine;
 using VContainer;
@@ -8,16 +7,15 @@ using VContainer.Unity;
 public class LocationLifetimeScope : LifetimeScope
 {
     [SerializeField] private UIProviderConfig _uiProviderConfig;
-    [SerializeField] private CustomizationDataConfig _customizationDataConfig;
+    [SerializeField] private CustomizationDataContainer customizationDataContainer;
     [SerializeField] private CharactersDataConfig _charactersDataConfig;
 
     protected override void Configure(IContainerBuilder builder)
     {
         builder.RegisterInstance(_uiProviderConfig);
-        builder.RegisterInstance(_customizationDataConfig);
+        builder.RegisterInstance(customizationDataContainer);
         builder.RegisterInstance(_charactersDataConfig);
-
-        builder.Register<CustomizationData>(Lifetime.Singleton);
+        
         builder.Register<UIProvider>(Lifetime.Singleton);
         builder.Register<CharactersData>(Lifetime.Singleton);
 

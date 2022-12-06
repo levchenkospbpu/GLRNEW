@@ -163,7 +163,7 @@ MonoBehaviour:
   _playerData: {fileID: 7683016008756294532}
   _uiCanvasData: {fileID: 1229415787}
   _uiProviderConfig: {fileID: 11400000, guid: b83eedee9d9b8dd4ba870d0e0d762e93, type: 2}
-  _customizationDataConfig: {fileID: 11400000, guid: 39efcb138e3f8a14092706140bb6c226,
+  customizationDataContainer: {fileID: 11400000, guid: 39efcb138e3f8a14092706140bb6c226,
     type: 2}
   _charactersDataConfig: {fileID: 11400000, guid: 93e704a5aa53f4c4484dc5789b7f54c3,
     type: 2}
