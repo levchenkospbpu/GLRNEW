@@ -1,41 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using GameScripts;
+using VContainer;
 
 namespace SceneControllers
 {
     public abstract class SceneControllerBase : ISceneController
     {
-        protected readonly List<GameScriptBase> GameScripts = new();
+        private readonly IObjectResolver _resolver;
+        private IState _previousState;
+
+        protected SceneControllerBase(IObjectResolver resolver)
+        {
+            _resolver = resolver;
+        }
 
         public abstract void Start();
 
-        public void StartGameScript(Type type)
+        public T ChangeState<T>() where T : IState
         {
-            var script = GameScripts.FirstOrDefault(t => t.GetType() == type);
-            if (script == null)
-            {
-                throw new Exception($"SceneController: Game Script {type} not found");
-            }
-
-            script.IsEnabled = true;
-            script.OnStart();
-        }
-
-        public void StopGameScript(Type type)
-        {
-            var script = GameScripts.FirstOrDefault(t => t.GetType() == type);
-            if (script == null)
-            {
-                throw new Exception($"SceneController: Game Script {type} not found");
-            }
-
-            if (script.IsEnabled)
-            {
-                script.IsEnabled = false;
-                script.OnDestroy();
-            }
+            _previousState?.End();
+            var state = _resolver.Resolve<T>();
+            state.Enter();
+            return state;
         }
     }
 }

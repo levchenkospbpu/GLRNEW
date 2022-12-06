@@ -7,11 +7,11 @@ using VContainer;
 
 namespace GameScripts
 {
-    public class AvatarGameScript : GameScriptBase
+    public class AvatarState : State
     {
-        [Inject] private readonly ISceneController _sceneController;
-        [Inject] private readonly CustomizationData _customizationData;
-        [Inject] private readonly UIProvider _uiProvider;
+        private readonly ISceneController _sceneController;
+        private readonly CustomizationData _customizationData;
+        private readonly UIProvider _uiProvider;
 
         private readonly List<GameObject> _items = new();
 
@@ -24,8 +24,15 @@ namespace GameScripts
         private int _currentTopColorID;
         private int _currentBottomColorID;
         private int _currentShoesColorID;
-        
-        public override void OnStart()
+
+        public AvatarState(ISceneController sceneController, CustomizationData customizationData, UIProvider uiProvider)
+        {
+            _sceneController = sceneController;
+            _customizationData = customizationData;
+            _uiProvider = uiProvider;
+        }
+
+        protected override void OnEnter()
         {
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerData>();
             
@@ -62,8 +69,8 @@ namespace GameScripts
             PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceTopColorID, _currentTopColorID);
             PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceBottomColorID, _currentBottomColorID);
             PlayerPrefs.SetInt(PlayerPrefsKeys.AppearanceShoesColorID, _currentShoesColorID);
-            
-            _sceneController.StartGameScript(typeof(MainPanelGameScript));
+
+            _sceneController.ChangeState<MainPanelState>();
         }
 
         private void HairHandler()
@@ -149,7 +156,7 @@ namespace GameScripts
             _items.Clear();
         }
 
-        public override void OnDestroy()
+        protected override void OnEnd()
         {
             
         }

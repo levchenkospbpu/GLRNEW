@@ -4,28 +4,31 @@ using VContainer;
 
 namespace GameScripts
 {
-    public class AuthorizationGameScript : GameScriptBase
+    public class AuthorizationState : State
     {
-        [Inject] private readonly ISceneController _sceneController;
-        
-        public override void OnStart()
+        private readonly ISceneController _sceneController;
+
+        public AuthorizationState(ISceneController sceneController)
+        {
+            _sceneController = sceneController;
+        }
+
+        protected override void OnEnter()
         {
             var accessToken = PlayerPrefs.GetString(PlayerPrefsKeys.AccessToken, string.Empty);
 
             if (string.IsNullOrEmpty(accessToken))
             {
                 PlayerPrefs.SetString(PlayerPrefsKeys.AccessToken, Random.Range(0,100).ToString());
-                _sceneController.StartGameScript(typeof(AvatarGameScript));
+                _sceneController.ChangeState<AvatarState>();
             }
             else
             {
-                _sceneController.StartGameScript(typeof(MainPanelGameScript));
+                _sceneController.ChangeState<MainPanelState>();
             }
-            
-            StopThisGameScript();
         }
 
-        public override void OnDestroy()
+        protected override void OnEnd()
         {
             
         }

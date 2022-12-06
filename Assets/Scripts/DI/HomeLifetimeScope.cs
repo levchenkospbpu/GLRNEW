@@ -1,3 +1,4 @@
+using GameScripts;
 using SceneControllers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +23,13 @@ public class HomeLifetimeScope : LifetimeScope
 
         builder.Register<ActionBinder>(Lifetime.Singleton).AsImplementedInterfaces();
 
-        builder.RegisterEntryPoint<Party>(Lifetime.Singleton).AsSelf();
-        builder.RegisterEntryPoint<Appearance>(Lifetime.Singleton).AsSelf();
-        builder.RegisterEntryPoint<HomeController>(Lifetime.Singleton).As<ISceneController>();
-        builder.RegisterEntryPoint<CustomSceneManager>(Lifetime.Singleton).AsSelf();
+        builder.Register<AuthorizationState>(Lifetime.Singleton);
+        builder.Register<AvatarState>(Lifetime.Singleton);
+        builder.Register<MainPanelState>(Lifetime.Singleton);
+
+        builder.RegisterEntryPoint<Party>().AsSelf();
+        builder.RegisterEntryPoint<Appearance>().AsSelf();
+        builder.RegisterEntryPoint<HomeController>().As<ISceneController>();
+        builder.RegisterEntryPoint<CustomSceneManager>().AsSelf();
     }
 }

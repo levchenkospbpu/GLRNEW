@@ -1,11 +1,11 @@
-using System;
+using GameScripts;
 using VContainer.Unity;
 
 namespace SceneControllers
 {
     public interface ISceneController : IStartable
     {
-        void StartGameScript(Type type);
-        void StopGameScript(Type type);
+        
+        T ChangeState<T>() where T : IState;
     }
 }
