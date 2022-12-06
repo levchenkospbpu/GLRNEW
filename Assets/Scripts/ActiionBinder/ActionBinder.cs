@@ -33,12 +33,6 @@ public class ActionBinder : IActionCaller, IActionRegister
 public enum ActionType
 {
     LoadScene,
-    ChangeHair,
-    ChangeHairColor,
-    ChangeSkinColor,
-    ChangeTopColor,
-    ChangeBottomColor,
-    ChangeShoesColor,
     SetChangeableSlotType,
     SetChangeableCharacterID,
     SetPartyCurrentIDs,
