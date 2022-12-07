@@ -32,14 +32,15 @@ namespace Audio
                 .SetClip(clip)
                 .SetVolume(_volumes[type]);
             
+            _activeSounds.Add(entity);
             return entity;
         }
 
         public void FixedTick()
         {
-            foreach (var entity in _activeSounds.Where(entity => !entity.IsPaused && !entity.IsPlaying && entity.IsFromPool))
+            foreach (var entity in _activeSounds.Where(entity => !entity.IsPaused && !entity.IsPlaying))
             {
-                _audioSourcePool.Return(entity);
+                if(entity.IsFromPool) _audioSourcePool.Return(entity);
                 _activeSounds.Remove(entity);
             }
         }
