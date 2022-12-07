@@ -1,3 +1,5 @@
+using Audio;
+using Pools;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -20,6 +22,7 @@ public class LocationLifetimeScope : LifetimeScope
 
         builder.Register<ActionBinder>(Lifetime.Singleton).AsImplementedInterfaces();
 
+        builder.RegisterEntryPoint<SoundManager>(Lifetime.Singleton).AsSelf();
         builder.RegisterEntryPoint<Party>(Lifetime.Singleton).AsSelf();
         builder.RegisterEntryPoint<Appearance>(Lifetime.Singleton).AsSelf();
         builder.RegisterEntryPoint<CustomSceneManager>(Lifetime.Singleton).AsSelf();
