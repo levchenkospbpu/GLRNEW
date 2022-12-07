@@ -1,50 +1,36 @@
-using Newtonsoft.Json.Bson;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace Audio
 {
-    public static AudioManager Instance { get; private set; }
-    public event Action SongStarted;
-
-    #region Singleton
-    private void Awake()
+    public class AudioManager : MonoBehaviour
     {
-        if (Instance == null)
+        public static AudioManager Instance { get; private set; }
+        public event Action SongStarted;
+
+        private AudioSource _audioSource;
+
+        private void Start()
         {
-            Instance = this;
+            _audioSource = GetComponent<AudioSource>();
+            DontDestroyOnLoad(gameObject);
         }
-        else
+
+        public void Play(AudioClip audioClip)
         {
-            Destroy(gameObject);
+            _audioSource.clip = audioClip;
+            _audioSource.Play();
+            SongStarted?.Invoke();
         }
-    }
-    #endregion
 
-    private AudioSource _audioSource;
+        public void Stop()
+        {
+            _audioSource.Stop();
+        }
 
-    private void Start()
-    {
-        _audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(gameObject);
-    }
-
-    public void Play(AudioClip audioClip)
-    {
-        _audioSource.clip = audioClip;
-        _audioSource.Play();
-        SongStarted?.Invoke();
-    }
-
-    public void Stop()
-    {
-        _audioSource.Stop();
-    }
-
-    public AudioClip GetAudioClip()
-    {
-        return _audioSource.clip;
+        public AudioClip GetAudioClip()
+        {
+            return _audioSource.clip;
+        }
     }
 }
