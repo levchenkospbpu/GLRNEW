@@ -1,47 +1,32 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Pools
 {
-    public class AudioSourcePool : IPoolBase<AudioSource>
+    public class AudioSourcePool : IPool<AudioSource>
     {
-        private readonly Stack<AudioSource> _stack = new();
-        
-        private Transform _rootObject;
-        private readonly List<GameObject> _audioSources = new();
+        private readonly Pool<AudioSource> _pool;
 
-        public AudioSourcePool(int capacity)
+        public AudioSourcePool()
         {
-            _rootObject = new GameObject("AudioSourcesPool").transform;
-
-            for (var i = 0; i < capacity; i++)
+            var root = new GameObject("AudioSourcesPool").transform;
+            _pool = new Pool<AudioSource>(() =>
             {
-                _stack.Push(CreateAudioSource());
-            }
+                var obj = new GameObject("AudioSource");
+                obj.transform.SetParent(root);
+
+                var audioSource = obj.AddComponent<AudioSource>();
+                return audioSource;
+            }, 10);
         }
         
         public AudioSource Take()
         {
-            if (!_stack.TryPop(out var obj))
-            {
-                return CreateAudioSource();
-            }
-
-            return obj;
+            return _pool.Take();
         }
 
         public void Return(AudioSource obj)
         {
-            _stack.Push(obj);
-        }
-
-        private AudioSource CreateAudioSource()
-        {
-            var obj = new GameObject("AudioSource");
-            obj.transform.parent = _rootObject;
-            _audioSources.Add(obj);
-            var script = obj.AddComponent<AudioSource>();
-            return script;
+            _pool.Return(obj);
         }
     }
 }

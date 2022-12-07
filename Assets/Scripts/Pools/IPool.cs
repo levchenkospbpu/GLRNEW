@@ -1,6 +1,6 @@
 namespace Pools
 {
-    public interface IPoolBase<T>
+    public interface IPool<T>
     {
         T Take();
         void Return(T obj);

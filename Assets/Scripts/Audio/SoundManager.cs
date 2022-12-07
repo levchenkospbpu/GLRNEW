@@ -1,56 +1,46 @@
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using Pools;
 using UnityEngine;
-using VContainer;
 
 namespace Audio
 {
     public class SoundManager : VContainer.Unity.IFixedTickable
     {
-        private List<SoundEntity> _activeSounds;
-
-        private readonly AudioSourcePool _audioSourcePool;
+        private readonly List<SoundEntity> _activeSounds = new();
+        private readonly AudioSourcePool _audioSourcePool = new();
 
         private readonly Dictionary<SoundType, float> _volumes = new()
         {
             { SoundType.Music, 1f }
         };
 
-        SoundManager ()
+        public SoundEntity Create(AudioClip clip, SoundType type)
         {
-            _audioSourcePool = new AudioSourcePool(1);
-            _activeSounds = new List<SoundEntity>();
-        }
-
-        public SoundEntity Play (AudioClip clip, SoundType type)
-        {
-            var source = _audioSourcePool.Take();
-            source.volume = _volumes[type];
-            source.clip = clip;
-            source.Play();
-            var entity = new SoundEntity(source);
+            var entity = new SoundEntity(_audioSourcePool.Take(), true)
+                .SetClip(clip)
+                .SetVolume(_volumes[type]);
+            
             _activeSounds.Add(entity);
             return entity;
         }
 
-        public SoundEntity CreateSound(AudioClip clip, SoundType type, AudioSource source)
+        public SoundEntity Create(AudioClip clip, SoundType type, AudioSource source)
         {
-            source.volume = _volumes[type];
-            source.clip = clip;
-            var entity = new SoundEntity(source);
+            var entity = new SoundEntity(source)
+                .SetClip(clip)
+                .SetVolume(_volumes[type]);
+            
             return entity;
         }
 
         public void FixedTick()
         {
-            foreach (SoundEntity entity in _activeSounds)
+            foreach (var entity in _activeSounds.Where(entity => !entity.IsPaused && !entity.IsPlaying && entity.IsFromPool))
             {
-                if (!entity.IsPaused && !entity.IsPlaying)
-                {
-                    _audioSourcePool.Return(entity);
-                    _activeSounds.Remove(entity);
-                }
+                _audioSourcePool.Return(entity);
+                _activeSounds.Remove(entity);
             }
         }
     }
