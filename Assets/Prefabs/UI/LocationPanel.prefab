@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _locationPanel: {fileID: 7368429349195470093}
+  clip: {fileID: 8300000, guid: 6019dfa387681a64ba0abdd05e92b263, type: 3}
 --- !u!114 &8240589468179880035
 MonoBehaviour:
   m_ObjectHideFlags: 0
