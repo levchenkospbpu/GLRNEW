@@ -10,6 +10,7 @@ namespace UI
         [field: SerializeField] public GameObject HomeMainPanel;
         [field: SerializeField] public GameObject HomeCustomizationPanel;
         [field: SerializeField] public GameObject ConfirmationPopup;
+        [field: SerializeField] public GameObject PartyPanel;
         [field: SerializeField] public List<UIElement> UIPrefabs { get; private set; }
     }
 }

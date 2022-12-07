@@ -11,6 +11,7 @@ namespace UI.Screens.PartyPanel
 
         public PartyPanelPresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig) : base(uiCanvasData, uiProviderConfig)
         {
+            Prefab = uiProviderConfig.PartyPanel;
             Parent = uiCanvasData.Screens;
         }
     }
