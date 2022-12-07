@@ -1,18 +1,24 @@
 using System;
 using Common.MVP;
+using Customization;
+using UI.Canvas;
 using UnityEngine;
 
 namespace UI.Screens.HomeMainPanel
 {
     public class HomeMainPanelPresenter : BasePresenter<HomeMainPanelView, HomeMainPanelModel>
     {
+        protected override GameObject Prefab { get; }
+        protected override Transform Parent { get; }
+        
         public Action OnPartyButton;
         public Action OnCustomizationButton;
         public Action OnMapButton;
         
-        public HomeMainPanelPresenter(GameObject prefab, Transform parent) : base(prefab, parent)
+        public HomeMainPanelPresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig) : base(uiCanvasData, uiProviderConfig)
         {
-            
+            Prefab = uiProviderConfig.HomeMainPanel;
+            Parent = uiCanvasData.Screens;
         }
 
         protected override void OnEnable()

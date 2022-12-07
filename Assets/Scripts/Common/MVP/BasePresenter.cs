@@ -1,11 +1,13 @@
+using UI;
+using UI.Canvas;
 using UnityEngine;
 
 namespace Common.MVP
 {
     public abstract class BasePresenter<TView, TModel> where TView : BaseView where TModel : BaseModel
     {
-        private readonly GameObject _prefab;
-        private readonly Transform _parent;
+        protected abstract GameObject Prefab { get; }
+        protected abstract Transform Parent { get; }
         
         private GameObject _instance;
         private bool _isEnabled;
@@ -13,17 +15,17 @@ namespace Common.MVP
         protected TView View;
         protected TModel Model;
 
-        protected BasePresenter(GameObject prefab, Transform parent)
+        protected BasePresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig)
         {
-            _prefab = prefab;
-            _parent = parent;
+            
         }
+        
 
         public void Enable(TModel model = null)
         {
             if (_isEnabled) return;
             
-            _instance = Object.Instantiate(_prefab, _parent);
+            _instance = Object.Instantiate(Prefab, Parent);
             View = _instance.GetComponent<TView>();
             Model = model;
             _isEnabled = true;

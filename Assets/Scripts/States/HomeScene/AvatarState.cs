@@ -24,7 +24,7 @@ namespace States.HomeScene
             _playerData = playerData;
             _appearance = appearance;
 
-            _characterCreationPresenter = new CharacterCreationPresenter(uiProviderConfig.CharacterCreation, uiCanvasData.Screens);
+            _characterCreationPresenter = new CharacterCreationPresenter(uiCanvasData, uiProviderConfig);
         }
 
         protected override void OnEnter()

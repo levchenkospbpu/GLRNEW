@@ -30,8 +30,8 @@ namespace States.HomeScene
             _playerData = playerData;
             _customizationData = customizationData;
             _appearance = appearance;
-            _homeCustomizationPanelPresenter = new HomeCustomizationPanelPresenter(uiProviderConfig.HomeCustomizationPanel, uiCanvasData.Screens);
-            _confirmationPopupPresenter = new ConfirmationPopupPresenter(uiProviderConfig.ConfirmationPopup, uiCanvasData.Popups);
+            _homeCustomizationPanelPresenter = new HomeCustomizationPanelPresenter(uiCanvasData, uiProviderConfig);
+            _confirmationPopupPresenter = new ConfirmationPopupPresenter(uiCanvasData, uiProviderConfig);
         }
         
         protected override void OnEnter()

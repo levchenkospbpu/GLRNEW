@@ -13,7 +13,7 @@ namespace States.HomeScene
         public MainPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData)
         {
             _sceneController = sceneController;
-            _homeMainPanelPresenter = new HomeMainPanelPresenter(uiProviderConfig.HomeMainPanel, uiCanvasData.Screens);
+            _homeMainPanelPresenter = new HomeMainPanelPresenter(uiCanvasData, uiProviderConfig);
         }
 
         protected override void OnEnter()

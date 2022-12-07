@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Common.MVP;
+using UI.Canvas;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -8,16 +9,20 @@ namespace UI.Screens.CharacterCreation
 {
     public class CharacterCreationPresenter : BasePresenter<CharacterCreationView, CharacterCreationModel>
     {
+        protected override GameObject Prefab { get; }
+        protected override Transform Parent { get; }
+        
         public Action OnApplyHandler;
         public Action<int> OnHairHandler;
         public Action<int> OnHairColorHandler;
         public Action<int> OnSkinColorHandler;
         
         private readonly List<GameObject> _items = new();
-
-        public CharacterCreationPresenter(GameObject prefab, Transform parent) : base(prefab, parent)
+        
+        public CharacterCreationPresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig) : base(uiCanvasData, uiProviderConfig)
         {
-            
+            Prefab = uiProviderConfig.CharacterCreation;
+            Parent = uiCanvasData.Screens;
         }
 
         protected override void OnEnable()

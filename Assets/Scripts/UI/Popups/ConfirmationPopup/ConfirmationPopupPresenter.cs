@@ -1,17 +1,22 @@
 using System;
 using Common.MVP;
+using UI.Canvas;
 using UnityEngine;
 
 namespace UI.Popups.ConfirmationPopup
 {
     public class ConfirmationPopupPresenter : BasePresenter<ConfirmationPopupView, ConfirmationPopupModel>
     {
+        protected override GameObject Prefab { get; }
+        protected override Transform Parent { get; }
+        
         public Action OnYesButton;
         public Action OnNoButton;
         
-        public ConfirmationPopupPresenter(GameObject prefab, Transform parent) : base(prefab, parent)
+        public ConfirmationPopupPresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig) : base(uiCanvasData, uiProviderConfig)
         {
-        
+            Prefab = uiProviderConfig.ConfirmationPopup;
+            Parent = uiCanvasData.Popups;
         }
 
         protected override void OnEnable()

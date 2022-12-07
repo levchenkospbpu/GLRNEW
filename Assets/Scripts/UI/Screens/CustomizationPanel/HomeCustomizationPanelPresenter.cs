@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Common.MVP;
+using UI.Canvas;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -8,6 +9,9 @@ namespace UI.Screens.CustomizationPanel
 {
     public class HomeCustomizationPanelPresenter : BasePresenter<HomeCustomizationPanelView, HomeCustomizationPanelModel>
     {
+        protected override GameObject Prefab { get; }
+        protected override Transform Parent { get; }
+        
         public Action OnApplyButton;
         public Action OnCancelButton;
         public Action<int> OnHairButton;
@@ -18,9 +22,10 @@ namespace UI.Screens.CustomizationPanel
         
         private readonly List<GameObject> _items = new();
 
-        public HomeCustomizationPanelPresenter(GameObject prefab, Transform parent) : base(prefab, parent)
+        public HomeCustomizationPanelPresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig) : base(uiCanvasData, uiProviderConfig)
         {
-            
+            Prefab = uiProviderConfig.HomeCustomizationPanel;
+            Parent = uiCanvasData.Screens;
         }
 
         protected override void OnEnable()
