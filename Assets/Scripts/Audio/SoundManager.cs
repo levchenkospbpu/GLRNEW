@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
 using Data;
 using Pools;
 using UnityEngine;
+using VContainer.Unity;
 
 namespace Audio
 {
-    public class SoundManager : VContainer.Unity.IFixedTickable
+    public class SoundManager : ITickable
     {
         private readonly List<SoundEntity> _activeSounds = new();
         private readonly AudioSourcePool _audioSourcePool = new();
@@ -26,22 +26,20 @@ namespace Audio
             return entity;
         }
 
-        public SoundEntity Create(AudioClip clip, SoundType type, AudioSource source)
+        public void Tick()
         {
-            var entity = new SoundEntity(source)
-                .SetClip(clip)
-                .SetVolume(_volumes[type]);
-            
-            _activeSounds.Add(entity);
-            return entity;
-        }
-
-        public void FixedTick()
-        {
-            foreach (var entity in _activeSounds.Where(entity => !entity.IsPaused && !entity.IsPlaying))
+            foreach (var entity in _activeSounds)
             {
-                if(entity.IsFromPool) _audioSourcePool.Return(entity);
-                _activeSounds.Remove(entity);
+                if (entity.BindObject != null)
+                {
+                    entity.SetPosition(entity.BindObject.position);
+                }
+
+                if (!entity.IsPaused && !entity.IsPlaying)
+                {
+                    if (entity.IsFromPool) _audioSourcePool.Return(entity);
+                    _activeSounds.Remove(entity);
+                }
             }
         }
     }

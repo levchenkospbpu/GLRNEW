@@ -6,18 +6,17 @@ namespace Audio
     {
         public static implicit operator AudioSource(SoundEntity entity) => entity._audioSource;
 
-        public bool IsPaused { get; private set; }
-        public bool IsPlaying => _audioSource.isPlaying;
-    
         public readonly bool IsFromPool;
 
+        private readonly Transform _transform;
         private readonly AudioSource _audioSource;
 
         public SoundEntity(AudioSource audioSource, bool isFromPool = false)
         {
             _audioSource = audioSource;
+            _transform = _audioSource.transform;
+            
             IsFromPool = isFromPool;
-            IsPaused = false;
         }
 
         public SoundEntity SetClip(AudioClip clip)
@@ -38,12 +37,43 @@ namespace Audio
             return this;
         }
 
+        public SoundEntity SetPosition(Vector3 position)
+        {
+            _transform.position = position;
+            return this;
+        }
+
+        #region BIND_TO_OBJECT
+
+        public Transform BindObject { get; private set; }
+        public SoundEntity BindTo(Transform @object)
+        {
+            BindObject = @object;
+            return this;
+        }
+
+        #endregion
+
+        #region PLAYING
+        
+        public bool IsPlaying => _audioSource.isPlaying;
         public SoundEntity Play()
         {
             _audioSource.Play();
             return this;
         }
+        
+        public SoundEntity Stop()
+        {
+            _audioSource.Stop();
+            return this;
+        }
+        
+        #endregion
 
+        #region PAUSE
+
+        public bool IsPaused { get; private set; }
         public SoundEntity Pause()
         {
             _audioSource.Pause();
@@ -58,10 +88,6 @@ namespace Audio
             return this;
         }
 
-        public SoundEntity Stop()
-        {
-            _audioSource.Stop();
-            return this;
-        }
+        #endregion
     }
 }
