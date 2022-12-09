@@ -16,7 +16,7 @@ namespace UI
 
         public UIProvider(UIProviderConfig uiProviderConfig, IObjectResolver resolver)
         {
-            _uiElements = uiProviderConfig.UIPrefabs.ToDictionary(x => x.GetType(), y => y);
+            //_uiElements = uiProviderConfig.UIPrefabs.ToDictionary(x => x.GetType(), y => y);
             _objectResolver = resolver;
         }
 

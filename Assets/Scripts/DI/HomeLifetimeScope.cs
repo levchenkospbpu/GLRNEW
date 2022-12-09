@@ -24,9 +24,6 @@ namespace DI
             builder.RegisterInstance(_uiProviderConfig);
             builder.RegisterInstance(customizationDataContainer);
             builder.RegisterInstance(_charactersDataConfig);
-            
-            builder.Register<CharactersData>(Lifetime.Singleton);
-            builder.Register<UIProvider>(Lifetime.Singleton);
 
             builder.Register<ActionBinder>(Lifetime.Singleton).AsImplementedInterfaces();
 
