@@ -706,7 +706,6 @@ GameObject:
   - component: {fileID: 5740099614711649695}
   - component: {fileID: 5740099614711649694}
   - component: {fileID: 5740099614711649666}
-  - component: {fileID: 8742361517229599145}
   - component: {fileID: 445438772347327132}
   m_Layer: 5
   m_Name: PartyButton
@@ -832,19 +831,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1
---- !u!114 &8742361517229599145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5740099614711649688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6578d2d6d8c374cb3c73ce2d8fee08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _locationPanel: {fileID: 7368429349195470093}
 --- !u!114 &445438772347327132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +859,6 @@ GameObject:
   - component: {fileID: 5740099614810884166}
   - component: {fileID: 5740099614810884161}
   - component: {fileID: 5740099614810884165}
-  - component: {fileID: 5740099614810884185}
   - component: {fileID: 8240589468179880035}
   m_Layer: 5
   m_Name: MapButton
@@ -999,20 +984,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1
---- !u!114 &5740099614810884185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5740099614810884163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c31360de7d86946a6df869dbdff093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _locationPanel: {fileID: 7368429349195470093}
-  clip: {fileID: 8300000, guid: 6019dfa387681a64ba0abdd05e92b263, type: 3}
 --- !u!114 &8240589468179880035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,7 +1012,6 @@ GameObject:
   - component: {fileID: 5740099614944455559}
   - component: {fileID: 5740099614944455558}
   - component: {fileID: 5740099614944455562}
-  - component: {fileID: 5740099614944455577}
   - component: {fileID: 3542146189857855075}
   m_Layer: 5
   m_Name: HomeButton
@@ -1167,19 +1137,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1
---- !u!114 &5740099614944455577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5740099614944455552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a70a3dbaf0c3be4ea47f82876721c88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _locationPanel: {fileID: 7368429349195470093}
 --- !u!114 &3542146189857855075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,7 +1163,6 @@ GameObject:
   - component: {fileID: 4633845438037689579}
   - component: {fileID: 7368429349195470090}
   - component: {fileID: 4678034254877969467}
-  - component: {fileID: 7368429349195470093}
   m_Layer: 2
   m_Name: LocationPanel
   m_TagString: Untagged
@@ -1276,15 +1232,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7368429349195470093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7070941994619420721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc7e81716a917e648ae28cd9488a9ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

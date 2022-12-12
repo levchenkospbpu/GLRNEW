@@ -9,48 +9,40 @@ using UnityEngine;
 using States.HomeScene;
 using UI.Screens.CustomizationPanel;
 using UI.Popups.ConfirmationPopup;
+using UI.Screens.CharacterCreation;
+using Customization;
+using Data;
 
 public class CharacterInfoState : State
 {
     private readonly ISceneController _sceneController;
+    private readonly CharactersDataConfig _charactersDataConfig;
 
     private readonly CharacterInfoPresenter _characterInfoPresenter;
-    private readonly ConfirmationPopupPresenter _confirmationPopupPresenter;
 
-    public CharacterInfoState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData)
+    private Dictionary<PartySlotType, int> _partyIDs = new();
+
+    public CharacterInfoState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, CharactersDataConfig charactersDataConfig)
     {
         _sceneController = sceneController;
+        _charactersDataConfig = charactersDataConfig;
+
         _characterInfoPresenter = new CharacterInfoPresenter(uiCanvasData, uiProviderConfig);
     }
 
-    protected override void OnEnter()
+    protected override void OnEnter(DataProvider dataProvider)
     {
-        _characterInfoPresenter.Enable();
+        _partyIDs = dataProvider.GetData<Dictionary<PartySlotType, int>>();
+
+        _characterInfoPresenter.Enable(new CharacterInfoModel(_charactersDataConfig.Characters));
 
         _characterInfoPresenter.OnChooseButton += () =>
         {
-            _sceneController.ChangeState<PartyPanelState>();
-        };
-
-        _characterInfoPresenter.OnChooseButton += () =>
-        {
-            _confirmationPopupPresenter.Enable(new ConfirmationPopupModel("$CONFIRMATION_CANCEL_CHAR_CHANGING_TEXT"));
-
-            _confirmationPopupPresenter.OnNoButton += () =>
-            {
-                _confirmationPopupPresenter.Disable();
-            };
-
-            _confirmationPopupPresenter.OnYesButton += () =>
-            {
-                //Chose character
-
-                _sceneController.ChangeState<PartyPanelState>();
-            };
+            _sceneController.ChangeState<PartyPanelState>(new DataProvider(_partyIDs));
         };
     }
 
-    protected override void OnEnd()
+    protected override void OnEnd(DataProvider dataProvider)
     {
         _characterInfoPresenter.Disable();
     }

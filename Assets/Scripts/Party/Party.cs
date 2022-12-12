@@ -1,3 +1,4 @@
+using Data;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,107 +8,44 @@ using VContainer;
 using VContainer.Unity;
 using IInitializable = VContainer.Unity.IInitializable;
 
-public class Party : IStartable, IInitializable
+public class Party : IInitializable
 {
-    public event System.Action ChangeableCharacterIDChanged;
-    public int TempBassID { get; private set; }
-    public int TempDrumsID { get; private set; }
-    public int CurrentBassID { get; private set; }
-    public int CurrentDrumsID { get; private set; }
-    public CharacterSlotType ChangeableSlotType { get; private set; }
-    public int ChangeableCharacterID { get; private set; }
-    public CharactersData CharactersData { get; private set; }
-    private IActionRegister _actionRegister;
+    public Dictionary<PartySlotType, int> PartyIDs { get; private set; } = new ();
 
-    public Party(CharactersData charactersData, IActionRegister actionRegister)
-    {
-        CharactersData = charactersData;
-        _actionRegister = actionRegister;
-    }
+    public CharactersDataConfig CharactersDataConfig { get; private set; }
 
-    public void Start()
+    public Party(CharactersDataConfig charactersDataConfig)
     {
-        _actionRegister.Register(ActionType.SetChangeableSlotType, SetChangeableSlotType);
-        _actionRegister.Register(ActionType.SetChangeableCharacterID, SetChangeableCharacterID);
-        _actionRegister.Register(ActionType.SetPartyCurrentIDs, SetCurrentIDs);
-        _actionRegister.Register(ActionType.SaveParty, Save);
-        _actionRegister.Register(ActionType.ResetIDs, ResetIDs);
+        CharactersDataConfig = charactersDataConfig;
     }
 
     public void Initialize()
     {
-        CurrentBassID = PlayerPrefs.GetInt(PlayerPrefsKeys.BassCharacterID, -1);
-        CurrentDrumsID = PlayerPrefs.GetInt(PlayerPrefsKeys.DrumsCharacterID, -1);
-        TempBassID = CurrentBassID;
-        TempDrumsID = CurrentDrumsID;
+        PartyIDs.Add(PartySlotType.Drums, PlayerPrefs.GetInt(PlayerPrefsKeys.DrumsCharacterID, -1));
+        PartyIDs.Add(PartySlotType.Guitar, PlayerPrefs.GetInt(PlayerPrefsKeys.GuitarCharacterID, -1));
+        PartyIDs.Add(PartySlotType.Bass, PlayerPrefs.GetInt(PlayerPrefsKeys.BassCharacterID, -1));
     }
 
-    private void SetChangeableSlotType(DataProvider dataProvider)
+    public void Save()
     {
-        ChangeableSlotType = dataProvider.GetData<CharacterSlotType>();
-        switch (ChangeableSlotType)
-        {
-            case CharacterSlotType.Bass:
-                ChangeableCharacterID = TempBassID;
-                break;
-            case CharacterSlotType.Drums:
-                ChangeableCharacterID = TempDrumsID;
-                break;
-            default:
-                break;
-        }
+        PlayerPrefs.SetInt(PlayerPrefsKeys.DrumsCharacterID, PartyIDs[PartySlotType.Drums]);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.GuitarCharacterID, PartyIDs[PartySlotType.Guitar]);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.BassCharacterID, PartyIDs[PartySlotType.Bass]);
+        PlayerPrefs.Save();
     }
 
-    private void SetChangeableCharacterID(DataProvider dataProvider)
+    public void SetCurrentDrumsID(int id)
     {
-        ChangeableCharacterID = dataProvider.GetData<int>();
-        ChangeableCharacterIDChanged?.Invoke();
+        PartyIDs[PartySlotType.Drums] = id;
     }
 
-    private void SetCurrentIDs(DataProvider dataProvider)
+    public void SetCurrentGuitarID(int id)
     {
-        switch (ChangeableSlotType)
-        {
-            case CharacterSlotType.Bass:
-                SetCurrentBassID();
-                break;
-            case CharacterSlotType.Drums:
-                SetCurrentDrumsID();
-                break;
-            default:
-                break;
-        }
+        PartyIDs[PartySlotType.Guitar] = id;
     }
 
-    private void SetCurrentBassID()
+    public void SetCurrentBassID(int id)
     {
-        TempBassID = ChangeableCharacterID;
-        if (TempDrumsID == TempBassID)
-        {
-            TempDrumsID = -1;
-        }
-    }
-
-    private void SetCurrentDrumsID()
-    {
-        TempDrumsID = ChangeableCharacterID;
-        if (TempBassID == TempDrumsID)
-        {
-            TempBassID = -1;
-        }
-    }
-
-    private void Save(DataProvider dataProvider)
-    {
-        CurrentBassID = TempBassID;
-        CurrentDrumsID = TempDrumsID;
-        PlayerPrefs.SetInt(PlayerPrefsKeys.BassCharacterID, TempBassID);
-        PlayerPrefs.SetInt(PlayerPrefsKeys.DrumsCharacterID, TempDrumsID);
-    }
-
-    private void ResetIDs(DataProvider dataProvider)
-    {
-        TempBassID = CurrentBassID;
-        TempDrumsID = CurrentDrumsID;
+        PartyIDs[PartySlotType.Bass] = id;
     }
 }

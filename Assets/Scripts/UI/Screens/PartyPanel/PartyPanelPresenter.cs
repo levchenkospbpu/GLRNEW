@@ -1,4 +1,5 @@
 using Common.MVP;
+using Data;
 using System;
 using UI.Canvas;
 using UnityEngine;
@@ -29,6 +30,8 @@ namespace UI.Screens.PartyPanel
             View.DrumsButton.onClick.AddListener(() => OnDrumsButton?.Invoke());
             View.GuitarButton.onClick.AddListener(() => OnGuitarButton?.Invoke());
             View.BassButton.onClick.AddListener(() => OnBassButton?.Invoke());
+
+            InitizlizeBanners();
         }
 
         protected override void OnDisable()
@@ -38,6 +41,13 @@ namespace UI.Screens.PartyPanel
             OnDrumsButton = null;
             OnGuitarButton = null;
             OnBassButton = null;
+        }
+        
+        public void InitizlizeBanners()
+        {
+            View.DrumsButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Drums]].Banner;
+            View.GuitarButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Guitar]].Banner;
+            View.BassButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Bass]].Banner;
         }
     }
 }

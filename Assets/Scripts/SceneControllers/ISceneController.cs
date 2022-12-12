@@ -6,6 +6,6 @@ namespace SceneControllers
     public interface ISceneController : IStartable
     {
         
-        T ChangeState<T>() where T : IState;
+        T ChangeState<T>(DataProvider dataProvider) where T : IState;
     }
 }

@@ -34,7 +34,7 @@ namespace States.HomeScene
             _confirmationPopupPresenter = new ConfirmationPopupPresenter(uiCanvasData, uiProviderConfig);
         }
         
-        protected override void OnEnter()
+        protected override void OnEnter(DataProvider dataProvider)
         {
             _currentHairId = _appearance.CurrentHairId;
             _currentHairColorID = _appearance.CurrentHairColorID;
@@ -61,14 +61,14 @@ namespace States.HomeScene
                     _appearance.SetBottomColor(_currentBottomColorID);
                     _appearance.SetShoesColor(_currentShoesColorID);
                     
-                    _sceneController.ChangeState<MainPanelState>();
+                    _sceneController.ChangeState<MainPanelState>(new DataProvider());
                 };
             };
             
             _homeCustomizationPanelPresenter.OnApplyButton += () =>
             {
                 _appearance.Save();
-                _sceneController.ChangeState<MainPanelState>();
+                _sceneController.ChangeState<MainPanelState>(new DataProvider());
             };
 
             _homeCustomizationPanelPresenter.OnHairButton += _appearance.SetHair;
@@ -78,7 +78,7 @@ namespace States.HomeScene
             _homeCustomizationPanelPresenter.OnShoesColorButton += _appearance.SetShoesColor;
         }
 
-        protected override void OnEnd()
+        protected override void OnEnd(DataProvider dataProvider)
         {
             _homeCustomizationPanelPresenter.Disable();
             _confirmationPopupPresenter.Disable();

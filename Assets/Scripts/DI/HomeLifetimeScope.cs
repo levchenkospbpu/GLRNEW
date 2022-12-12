@@ -33,6 +33,7 @@ namespace DI
             builder.Register<CustomizationPanelState>(Lifetime.Singleton);
             builder.Register<MapPanelState>(Lifetime.Singleton);
             builder.Register<PartyPanelState>(Lifetime.Singleton);
+            builder.Register<CharacterInfoState>(Lifetime.Singleton);
 
             builder.RegisterEntryPoint<Party>().AsSelf();
             builder.RegisterEntryPoint<Appearance>().AsSelf();

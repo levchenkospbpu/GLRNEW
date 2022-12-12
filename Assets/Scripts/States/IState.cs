@@ -2,7 +2,7 @@ namespace States
 {
     public interface IState
     {
-        void Enter();
-        void End();
+        void Enter(DataProvider dataProvider);
+        void End(DataProvider dataProvider);
     }
 }

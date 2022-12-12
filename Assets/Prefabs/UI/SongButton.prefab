@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3819237401153731911}
   - component: {fileID: 3571690579021206057}
   - component: {fileID: 375799739436173676}
-  - component: {fileID: 9197096142815944767}
   m_Layer: 2
   m_Name: SongButton
   m_TagString: Untagged
@@ -140,18 +139,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &9197096142815944767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5368563854243148780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9c5fba3cebb63548803e010aec3d7f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7435154917627202635
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +287,6 @@ GameObject:
   - component: {fileID: 825670445786979211}
   - component: {fileID: 4192145793329871180}
   - component: {fileID: 2226483894657433424}
-  - component: {fileID: 516147726713481712}
   m_Layer: 2
   m_Name: StopSongButton
   m_TagString: Untagged
@@ -424,16 +410,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
---- !u!114 &516147726713481712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7942309644838764396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c44b566497185446bcf0899f3274007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _songButton: {fileID: 9197096142815944767}

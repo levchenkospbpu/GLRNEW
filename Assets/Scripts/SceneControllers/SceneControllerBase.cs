@@ -15,12 +15,12 @@ namespace SceneControllers
 
         public abstract void Start();
 
-        public T ChangeState<T>() where T : IState
+        public T ChangeState<T>(DataProvider dataProvider) where T : IState
         {
-            _previousState?.End();
+            _previousState?.End(dataProvider);
             var state = _resolver.Resolve<T>();
             _previousState = state;
-            state.Enter();
+            state.Enter(dataProvider);
             return state;
         }
     }

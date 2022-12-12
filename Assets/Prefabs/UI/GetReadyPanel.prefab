@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5321018154301231242}
   - component: {fileID: 2948636267988930716}
   - component: {fileID: 2625429680392679845}
-  - component: {fileID: 5462246364949558171}
   - component: {fileID: 8390597183699106150}
   - component: {fileID: 9026320980339083622}
   - component: {fileID: 127536720521012400}
@@ -96,20 +95,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &5462246364949558171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348569952840663072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bedbce5bd9dff6045823558ebbb49449, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partyPanel: {fileID: 398061000780341869}
-  <CharacterSlotType>k__BackingField: 1
 --- !u!61 &8390597183699106150
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,7 +192,6 @@ GameObject:
   - component: {fileID: 4677232125977868774}
   - component: {fileID: 6246549597895899734}
   - component: {fileID: 8714990996733522770}
-  - component: {fileID: 4979499836639798255}
   m_Layer: 2
   m_Name: CancelButton
   m_TagString: Untagged
@@ -333,19 +317,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &4979499836639798255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411759697162207628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5028f5d2a3a22354c856e0791e464db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partyPanel: {fileID: 398061000780341869}
 --- !u!1 &3123971130416033870
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +573,6 @@ GameObject:
   - component: {fileID: 1037813555728041739}
   - component: {fileID: 9105774765492466974}
   - component: {fileID: 4379105323266201387}
-  - component: {fileID: 2527700622091330107}
   m_Layer: 2
   m_Name: ChoseButton
   m_TagString: Untagged
@@ -728,19 +698,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &2527700622091330107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3731332539330066505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0582e3cd0d6fd6a409bddf4accec752b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partyPanel: {fileID: 398061000780341869}
 --- !u!1 &3944755795033134380
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +710,6 @@ GameObject:
   - component: {fileID: 8436121351883804759}
   - component: {fileID: 3509837513511379164}
   - component: {fileID: 8088459090874013217}
-  - component: {fileID: 8203686921663516164}
   - component: {fileID: 6043907006180638856}
   m_Layer: 2
   m_Name: Banner
@@ -835,19 +791,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &8203686921663516164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3944755795033134380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d56b72bc06b68834f85f7efe122ceaef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partyPanel: {fileID: 398061000780341869}
 --- !u!114 &6043907006180638856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +816,6 @@ GameObject:
   - component: {fileID: 2766963087697249485}
   - component: {fileID: 6122175114329895915}
   - component: {fileID: 9041763213708288063}
-  - component: {fileID: 597314227999546500}
   m_Layer: 2
   m_Name: Content
   m_TagString: Untagged
@@ -939,18 +881,6 @@ MonoBehaviour:
   m_Spacing: {x: 25, y: 25}
   m_Constraint: 1
   m_ConstraintCount: 4
---- !u!114 &597314227999546500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4333185087968575779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a19c1a7729c3444a83be0393cef309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5124587946351699688
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +892,6 @@ GameObject:
   - component: {fileID: 4243476434442357365}
   - component: {fileID: 4145995115944727720}
   - component: {fileID: 5403918515271063114}
-  - component: {fileID: 398061000780341869}
   m_Layer: 2
   m_Name: GetReadyPanel
   m_TagString: Untagged
@@ -1034,31 +963,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &398061000780341869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5124587946351699688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b5db84cd4ce874bbd1291ec70e368b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CharacterInfoPanel>k__BackingField: {fileID: 7369582173486874582}
-  <PartySlotButtons>k__BackingField:
-  - {fileID: 5462246364949558171}
-  - {fileID: 3954581741594986912}
-  <ObjectsToHideWhenChanging>k__BackingField:
-  - {fileID: 1348569952840663072}
-  - {fileID: 3441929676551831834}
-  - {fileID: 5541720902382791613}
-  - {fileID: 9135635158575269960}
-  - {fileID: 1411759697162207628}
-  <CharacterInfoScrollView>k__BackingField: {fileID: 8292091349946073891}
-  <SongsPanel>k__BackingField: {fileID: 0}
-  _startRhythmGameButton: {fileID: 2135262215787090095}
 --- !u!1 &5541720902382791613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +975,6 @@ GameObject:
   - component: {fileID: 6566661397867462821}
   - component: {fileID: 4121185481263011895}
   - component: {fileID: 7557545962095887763}
-  - component: {fileID: 3954581741594986912}
   - component: {fileID: 7417553423783768884}
   - component: {fileID: 9079568525305944296}
   - component: {fileID: 499046457702289618}
@@ -1155,20 +1058,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &3954581741594986912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5541720902382791613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bedbce5bd9dff6045823558ebbb49449, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partyPanel: {fileID: 398061000780341869}
-  <CharacterSlotType>k__BackingField: 0
 --- !u!61 &7417553423783768884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1401,7 +1290,6 @@ GameObject:
   - component: {fileID: 3006937847574696659}
   - component: {fileID: 1013110634144277266}
   - component: {fileID: 7505424168820464480}
-  - component: {fileID: 8292091349946073891}
   m_Layer: 2
   m_Name: Scroll View
   m_TagString: Untagged
@@ -1513,19 +1401,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &8292091349946073891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6618157169509743655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acef68d90c29afd49a24b0b8ca02748b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partyPanel: {fileID: 398061000780341869}
 --- !u!1 &7133262117069571353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,7 +1547,6 @@ GameObject:
   - component: {fileID: 6928332045457279948}
   - component: {fileID: 4710768864360175207}
   - component: {fileID: 1754022735300723471}
-  - component: {fileID: 8622847172248159136}
   m_Layer: 2
   m_Name: CharacterInfoPanel
   m_TagString: Untagged
@@ -1741,18 +1615,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8622847172248159136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369582173486874582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e43dd6149ed4664d8ad6aa0b1ac7c2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7781704400016441153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +1854,6 @@ GameObject:
   - component: {fileID: 3208141193242440159}
   - component: {fileID: 5180783415446769970}
   - component: {fileID: 4552580041360052446}
-  - component: {fileID: 2135262215787090095}
   m_Layer: 2
   m_Name: StartRhythmGameButton
   m_TagString: Untagged
@@ -2118,16 +1979,3 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
---- !u!114 &2135262215787090095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9135635158575269960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3016ac43b1ec9241bc2665291c71775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partyPanel: {fileID: 398061000780341869}

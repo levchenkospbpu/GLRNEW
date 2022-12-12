@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcb56583bf90f54b8c53747c18908d2, type: 3}
   m_Name: Tobyo
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Tobyo
+  <Name>k__BackingField: You
   <HP>k__BackingField: 500
   <Atk>k__BackingField: 3
   <Def>k__BackingField: 0

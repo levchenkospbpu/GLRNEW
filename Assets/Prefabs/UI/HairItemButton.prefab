@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 6589730665911348112}
   - component: {fileID: 5330432082603072950}
   - component: {fileID: 8719882946510316202}
-  - component: {fileID: -1231250361701020785}
   - component: {fileID: 1781802559078554936}
   m_Layer: 5
   m_Name: HairItemButton
@@ -259,20 +258,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-1231250361701020785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6384476815649155047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc502dddcfaaeda4dafdc42ca3a5e087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Button>k__BackingField: {fileID: 8719882946510316202}
-  <Text>k__BackingField: {fileID: 6502066017183486982}
 --- !u!114 &1781802559078554936
 MonoBehaviour:
   m_ObjectHideFlags: 0

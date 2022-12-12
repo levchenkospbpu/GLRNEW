@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
     private Ink.Runtime.Story _currentStory;
 
     [Inject]
-    private UIProvider _uiProvider;
+    //private UIProvider _uiProvider;
 
     public bool DialogueIsPlaying { get; private set; }
 
@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator EnterDialogueMode(TextAsset inkJSON, string name)
     {
-        _uiProvider.Show(typeof(DialoguePanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+        //_uiProvider.Show(typeof(DialoguePanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
         Initialize();
         _currentStory = new Story(inkJSON.text);
         DialogueStarted?.Invoke();
@@ -103,7 +103,7 @@ public class DialogueManager : MonoBehaviour
         DialogueIsPlaying = false;
         _dialogueText.text = string.Empty;
         _npcNameText.text = string.Empty;
-        _uiProvider.Show(typeof(LocationPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+        //_uiProvider.Show(typeof(LocationPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
     }
 
     private void ContinueStory()

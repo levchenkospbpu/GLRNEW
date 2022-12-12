@@ -14,5 +14,6 @@ public static class PlayerPrefsKeys
     public const string AppearanceShoesColorID = "APPEARANCE_SHOES_COLOR_ID";
 
     public const string DrumsCharacterID = "DRUMS_CHARACTER_ID";
+    public const string GuitarCharacterID = "GUITAR_CHARACTER_ID";
     public const string BassCharacterID = "BASS_CHARACTER_ID";
 }

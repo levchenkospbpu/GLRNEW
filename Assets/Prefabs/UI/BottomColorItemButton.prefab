@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 843063127392193712}
   - component: {fileID: 4515767266886349500}
   - component: {fileID: 9086606741416432225}
-  - component: {fileID: 306225978996009082}
   - component: {fileID: 3287163371721959109}
   m_Layer: 5
   m_Name: BottomColorItemButton
@@ -123,20 +122,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &306225978996009082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8482357817561545641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c0c274365f16e44398ea6d1d904e041, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Button>k__BackingField: {fileID: 9086606741416432225}
-  <Image>k__BackingField: {fileID: 4515767266886349500}
 --- !u!114 &3287163371721959109
 MonoBehaviour:
   m_ObjectHideFlags: 0

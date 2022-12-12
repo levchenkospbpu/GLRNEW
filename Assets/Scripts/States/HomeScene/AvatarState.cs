@@ -27,7 +27,7 @@ namespace States.HomeScene
             _characterCreationPresenter = new CharacterCreationPresenter(uiCanvasData, uiProviderConfig);
         }
 
-        protected override void OnEnter()
+        protected override void OnEnter(DataProvider dataProvider)
         {
             _characterCreationPresenter.Enable(new CharacterCreationModel(_customizationData.HairMaterals, _playerData.Hair, _customizationData.SkinMaterials));
 
@@ -42,10 +42,10 @@ namespace States.HomeScene
             _appearance.Save();
             PlayerPrefs.SetString(PlayerPrefsKeys.AccessToken, Guid.NewGuid().ToString());
             
-            _sceneController.ChangeState<MainPanelState>();
+            _sceneController.ChangeState<MainPanelState>(new DataProvider());
         }
 
-        protected override void OnEnd()
+        protected override void OnEnd(DataProvider dataProvider)
         {
             _characterCreationPresenter.Disable();
         }

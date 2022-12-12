@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Common.MVP;
 using UI.Canvas;
 using UnityEngine;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace UI.Screens.CustomizationPanel
@@ -48,9 +50,8 @@ namespace UI.Screens.CustomizationPanel
                 var index = i;
 
                 var obj = Object.Instantiate(View.HairItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<HairItemButton>();
-                script.Text.text = index.ToString();
-                script.Button.onClick.AddListener(() => OnHairButton?.Invoke(index));
+                obj.GetComponent<Image>().color = new Color(1, 1, 1);
+                obj.GetComponent<Button>().onClick.AddListener(() => OnHairButton?.Invoke(index));
 
                 _items.Add(obj);
             }
@@ -65,9 +66,8 @@ namespace UI.Screens.CustomizationPanel
                 var index = i;
 
                 var obj = Object.Instantiate(View.HairColorItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<HairColorItemButton>();
-                script.Image.color = Model.HairMaterials[index].color;
-                script.Button.onClick.AddListener(() => OnHairColorButton?.Invoke(index));
+                obj.GetComponent<Image>().color = Model.HairMaterials[index].color;
+                obj.GetComponent<Button>().onClick.AddListener(() => OnHairColorButton?.Invoke(index));
                 
                 _items.Add(obj);
             }
@@ -82,9 +82,8 @@ namespace UI.Screens.CustomizationPanel
                 var index = i;
                 
                 var obj = Object.Instantiate(View.TopColorItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<TopColorItemButton>();
-                script.Image.color = Model.ClothesMaterials[index].color;
-                script.Button.onClick.AddListener(() => OnTopColorButton?.Invoke(index));
+                obj.GetComponent<Image>().color = Model.ClothesMaterials[index].color;
+                obj.GetComponent<Button>().onClick.AddListener(() => OnTopColorButton?.Invoke(index));
                 
                 _items.Add(obj);
             }
@@ -99,9 +98,8 @@ namespace UI.Screens.CustomizationPanel
                 var index = i;
 
                 var obj = Object.Instantiate(View.BottomColorItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<BottomColorItemButton>();
-                script.Image.color = Model.ClothesMaterials[index].color;
-                script.Button.onClick.AddListener(() => OnBottomColorButton?.Invoke(index));
+                obj.GetComponent<Image>().color = Model.ClothesMaterials[index].color;
+                obj.GetComponent<Button>().onClick.AddListener(() => OnBottomColorButton?.Invoke(index));
                 
                 _items.Add(obj);
             }
@@ -116,9 +114,8 @@ namespace UI.Screens.CustomizationPanel
                 var index = i;
 
                 var obj = Object.Instantiate(View.ShoesColorItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<ShoesColorItemButton>();
-                script.Image.color = Model.ClothesMaterials[index].color;
-                script.Button.onClick.AddListener(() => OnShoesColorButton?.Invoke(index));
+                obj.GetComponent<Image>().color = Model.ClothesMaterials[index].color;
+                obj.GetComponent<Button>().onClick.AddListener(() => OnShoesColorButton?.Invoke(index));
                 
                 _items.Add(obj);
             }

@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     [Inject]
     private Party _party;
     [Inject]
-    private UIProvider _uiProvider;
+    //private UIProvider _uiProvider;
 
     [SerializeField] private int _enemyDamage;
     private int _playerDamage;
@@ -51,13 +51,13 @@ public class ScoreManager : MonoBehaviour
     {
         if (_party.CurrentBassID != -1)
         {
-            StartPlayerHP += _party.CharactersData.Characters[_party.CurrentBassID].HP;
-            _playerDamage += _party.CharactersData.Characters[_party.CurrentBassID].Atk;
+            StartPlayerHP += _party.CharactersDataConfig.Characters[_party.CurrentBassID].HP;
+            _playerDamage += _party.CharactersDataConfig.Characters[_party.CurrentBassID].Atk;
         }
         if (_party.CurrentDrumsID != -1)
         {
-            StartPlayerHP += _party.CharactersData.Characters[_party.CurrentDrumsID].HP;
-            _playerDamage += _party.CharactersData.Characters[_party.CurrentDrumsID].Atk;
+            StartPlayerHP += _party.CharactersDataConfig.Characters[_party.CurrentDrumsID].HP;
+            _playerDamage += _party.CharactersDataConfig.Characters[_party.CurrentDrumsID].Atk;
         }
         EnemyHP = StartEnemyHP;
         PlayerHP = StartPlayerHP;
@@ -74,9 +74,9 @@ public class ScoreManager : MonoBehaviour
         }
         if (EnemyHP <= 0)
         {
-            AudioManager.Instance.Stop();
+            //AudioManager.Instance.Stop();
             SongManager.Instance.Stop();
-            _uiProvider.Instantiate(typeof(RhythmGameResultPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+            //_uiProvider.Instantiate(typeof(RhythmGameResultPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
         }
     }
 
@@ -87,9 +87,9 @@ public class ScoreManager : MonoBehaviour
         Combo = 0;
         if (PlayerHP <= 0)
         {
-            AudioManager.Instance.Stop();
+            //AudioManager.Instance.Stop();
             SongManager.Instance.Stop();
-            _uiProvider.Instantiate(typeof(RhythmGameResultPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
+            //_uiProvider.Instantiate(typeof(RhythmGameResultPanel), GameObject.FindGameObjectWithTag("MainCanvas").transform);
         }
     }
 }

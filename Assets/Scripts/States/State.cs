@@ -2,18 +2,18 @@ namespace States
 {
     public abstract class State : IState
     {
-        public void Enter()
+        public void Enter(DataProvider dataProvider)
         {
-            OnEnter();
+            OnEnter(dataProvider);
         }
 
-        public void End()
+        public void End(DataProvider dataProvider)
         {
-            OnEnd();
+            OnEnd(dataProvider);
         }
 
-        protected abstract void OnEnter();
-        protected abstract void OnEnd();
+        protected abstract void OnEnter(DataProvider dataProvider);
+        protected abstract void OnEnd(DataProvider dataProvider);
 
     }
 }

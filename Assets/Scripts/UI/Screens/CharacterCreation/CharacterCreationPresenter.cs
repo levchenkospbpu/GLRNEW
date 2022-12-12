@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Common.MVP;
 using UI.Canvas;
 using UnityEngine;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace UI.Screens.CharacterCreation
@@ -52,9 +53,8 @@ namespace UI.Screens.CharacterCreation
                 var index = i;
 
                 var obj = Object.Instantiate(View.HairItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<HairItemButton>();
-                script.Text.text = index.ToString();
-                script.Button.onClick.AddListener(() => OnHairHandler?.Invoke(index));
+                obj.GetComponent<Image>().color = new Color(1, 1, 1);
+                obj.GetComponent<Button>().onClick.AddListener(() => OnHairHandler?.Invoke(index));
 
                 _items.Add(obj);
             }
@@ -69,9 +69,8 @@ namespace UI.Screens.CharacterCreation
                 var index = i;
 
                 var obj = Object.Instantiate(View.SkinColorItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<SkinColorItemButton>();
-                script.Image.color = Model.SkinMaterials[index].color;
-                script.Button.onClick.AddListener(() => OnSkinColorHandler?.Invoke(index));
+                obj.GetComponent<Image>().color = Model.SkinMaterials[index].color;
+                obj.GetComponent<Button>().onClick.AddListener(() => OnSkinColorHandler?.Invoke(index));
                 
                 _items.Add(obj);
             }
@@ -86,9 +85,8 @@ namespace UI.Screens.CharacterCreation
                 var index = i;
 
                 var obj = Object.Instantiate(View.HairColorItemPrefab, View.ScrollContent);
-                var script = obj.GetComponent<HairColorItemButton>();
-                script.Image.color = Model.HairMaterials[index].color;
-                script.Button.onClick.AddListener(() => OnHairColorHandler?.Invoke(index));
+                obj.GetComponent<Image>().color = Model.HairMaterials[index].color;
+                obj.GetComponent<Button>().onClick.AddListener(() => OnHairColorHandler?.Invoke(index));
                 
                 _items.Add(obj);
             }

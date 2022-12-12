@@ -15,9 +15,6 @@ public class LocationLifetimeScope : LifetimeScope
         builder.RegisterInstance(_uiProviderConfig);
         builder.RegisterInstance(customizationDataContainer);
         builder.RegisterInstance(_charactersDataConfig);
-        
-        builder.Register<UIProvider>(Lifetime.Singleton);
-        builder.Register<CharactersData>(Lifetime.Singleton);
 
         builder.Register<ActionBinder>(Lifetime.Singleton).AsImplementedInterfaces();
 
