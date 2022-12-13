@@ -15,7 +15,7 @@ namespace SceneControllers
 
         public override void Start()
         {
-            ChangeState<AuthorizationState>();
+            ChangeState<AuthorizationState>(new DataProvider());
         }
     }
 }

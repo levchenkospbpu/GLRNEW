@@ -21,9 +21,9 @@ public class Party : IInitializable
 
     public void Initialize()
     {
-        PartyIDs.Add(PartySlotType.Drums, PlayerPrefs.GetInt(PlayerPrefsKeys.DrumsCharacterID, -1));
-        PartyIDs.Add(PartySlotType.Guitar, PlayerPrefs.GetInt(PlayerPrefsKeys.GuitarCharacterID, -1));
-        PartyIDs.Add(PartySlotType.Bass, PlayerPrefs.GetInt(PlayerPrefsKeys.BassCharacterID, -1));
+        PartyIDs[PartySlotType.Drums] = PlayerPrefs.GetInt(PlayerPrefsKeys.DrumsCharacterID, -1);
+        PartyIDs[PartySlotType.Guitar] = PlayerPrefs.GetInt(PlayerPrefsKeys.GuitarCharacterID, -1);
+        PartyIDs[PartySlotType.Bass] = PlayerPrefs.GetInt(PlayerPrefsKeys.BassCharacterID, -1);
     }
 
     public void Save()
@@ -34,18 +34,27 @@ public class Party : IInitializable
         PlayerPrefs.Save();
     }
 
-    public void SetCurrentDrumsID(int id)
+    public void SetID(PartySlotType slotType, int id)
     {
-        PartyIDs[PartySlotType.Drums] = id;
-    }
-
-    public void SetCurrentGuitarID(int id)
-    {
-        PartyIDs[PartySlotType.Guitar] = id;
-    }
-
-    public void SetCurrentBassID(int id)
-    {
-        PartyIDs[PartySlotType.Bass] = id;
+        switch(slotType)
+        {
+            case PartySlotType.Drums:
+                PartyIDs[PartySlotType.Drums] = id;
+                if (PartyIDs[PartySlotType.Guitar] == id) PartyIDs[PartySlotType.Guitar] = -1;
+                if (PartyIDs[PartySlotType.Bass] == id) PartyIDs[PartySlotType.Bass] = -1;
+                return;
+            case PartySlotType.Guitar:
+                PartyIDs[PartySlotType.Guitar] = id;
+                if (PartyIDs[PartySlotType.Drums] == id) PartyIDs[PartySlotType.Drums] = -1;
+                if (PartyIDs[PartySlotType.Bass] == id) PartyIDs[PartySlotType.Bass] = -1;
+                return;
+            case PartySlotType.Bass:
+                PartyIDs[PartySlotType.Bass] = id;
+                if (PartyIDs[PartySlotType.Drums] == id) PartyIDs[PartySlotType.Drums] = -1;
+                if (PartyIDs[PartySlotType.Guitar] == id) PartyIDs[PartySlotType.Guitar] = -1;
+                return;
+            default:
+                return;
+        }
     }
 }

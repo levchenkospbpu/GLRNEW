@@ -17,9 +17,10 @@ namespace States.HomeScene
         private readonly Party _party;
 
         private readonly PartyPanelPresenter _partyPanelPresenter;
+        private readonly CharacterInfoPresenter _characterInfoPresenter;
         private readonly ConfirmationPopupPresenter _confirmationPopupPresenter;
 
-        private Dictionary<PartySlotType, int> _partyIDs = new();
+        private Dictionary<PartySlotType, int> _startPartyIDs = new();
 
         public PartyPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, CharactersDataConfig charactersDataConfig, Party party)
         {
@@ -27,14 +28,20 @@ namespace States.HomeScene
             _charactersDataConfig = charactersDataConfig;
             _party = party;
             _partyPanelPresenter = new PartyPanelPresenter(uiCanvasData, uiProviderConfig);
+            _characterInfoPresenter = new CharacterInfoPresenter(uiCanvasData, uiProviderConfig);
             _confirmationPopupPresenter = new ConfirmationPopupPresenter(uiCanvasData, uiProviderConfig);
         }
 
         protected override void OnEnter(DataProvider dataProvider)
         {
-            _partyIDs = dataProvider.GetData<Dictionary<PartySlotType, int>>();
+            _startPartyIDs = new Dictionary<PartySlotType, int>(dataProvider.GetData<Dictionary<PartySlotType, int>>());
 
-            _partyPanelPresenter.Enable(new PartyPanelModel(_charactersDataConfig.Characters, _partyIDs));
+            ShowPartyPanel();
+        }
+
+        private void ShowPartyPanel()
+        {
+            _partyPanelPresenter.Enable(new PartyPanelModel(_charactersDataConfig.Characters, _party.PartyIDs));
 
             _partyPanelPresenter.OnCancelButton += () =>
             {
@@ -47,9 +54,9 @@ namespace States.HomeScene
 
                 _confirmationPopupPresenter.OnYesButton += () =>
                 {
-                    _party.SetCurrentDrumsID(_partyIDs[PartySlotType.Drums]);
-                    _party.SetCurrentGuitarID(_partyIDs[PartySlotType.Guitar]);
-                    _party.SetCurrentBassID(_partyIDs[PartySlotType.Bass]);
+                    _party.SetID(PartySlotType.Drums, _startPartyIDs[PartySlotType.Drums]);
+                    _party.SetID(PartySlotType.Guitar, _startPartyIDs[PartySlotType.Guitar]);
+                    _party.SetID(PartySlotType.Bass, _startPartyIDs[PartySlotType.Bass]);
                     _party.Save();
 
                     _sceneController.ChangeState<MainPanelState>(new DataProvider());
@@ -64,17 +71,32 @@ namespace States.HomeScene
 
             _partyPanelPresenter.OnDrumsButton += () =>
             {
-                _sceneController.ChangeState<CharacterInfoState>(new DataProvider(_partyIDs));
+                ShowCharacterInfo(PartySlotType.Drums);
+                _partyPanelPresenter.Disable();
             };
 
             _partyPanelPresenter.OnGuitarButton += () =>
             {
-                _sceneController.ChangeState<CharacterInfoState>(new DataProvider(_partyIDs));
+                ShowCharacterInfo(PartySlotType.Guitar);
+                _partyPanelPresenter.Disable();
             };
 
             _partyPanelPresenter.OnBassButton += () =>
             {
-                _sceneController.ChangeState<CharacterInfoState>(new DataProvider(_partyIDs));
+                ShowCharacterInfo(PartySlotType.Bass);
+                _partyPanelPresenter.Disable();
+            };
+        }
+
+        private void ShowCharacterInfo(PartySlotType changableSlot)
+        {
+            _characterInfoPresenter.Enable(new CharacterInfoModel(_charactersDataConfig.Characters, changableSlot));
+
+            _characterInfoPresenter.OnChooseButton += (PartySlotType slotType, int id) =>
+            {
+                _party.SetID(slotType, id);
+                ShowPartyPanel();
+                _characterInfoPresenter.Disable();
             };
         }
 

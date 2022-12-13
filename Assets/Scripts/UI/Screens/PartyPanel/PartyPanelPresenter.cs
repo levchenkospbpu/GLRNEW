@@ -45,9 +45,18 @@ namespace UI.Screens.PartyPanel
         
         public void InitizlizeBanners()
         {
-            View.DrumsButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Drums]].Banner;
-            View.GuitarButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Guitar]].Banner;
-            View.BassButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Bass]].Banner;
+            if (Model.PartyIDs[PartySlotType.Drums] != -1)
+            {
+                View.DrumsButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Drums]].Banner;
+            }
+            if (Model.PartyIDs[PartySlotType.Guitar] != -1)
+            {
+                View.GuitarButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Guitar]].Banner;
+            }
+            if (Model.PartyIDs[PartySlotType.Bass] != -1)
+            {
+                View.BassButton.image.sprite = Model.Characters[Model.PartyIDs[PartySlotType.Bass]].Banner;
+            }
         }
     }
 }

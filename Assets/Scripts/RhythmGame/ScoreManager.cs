@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using Data;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -49,15 +50,20 @@ public class ScoreManager : MonoBehaviour
 
     private void Initialize()
     {
-        if (_party.CurrentBassID != -1)
+        if (_party.PartyIDs[PartySlotType.Drums] != -1)
         {
-            StartPlayerHP += _party.CharactersDataConfig.Characters[_party.CurrentBassID].HP;
-            _playerDamage += _party.CharactersDataConfig.Characters[_party.CurrentBassID].Atk;
+            StartPlayerHP += _party.CharactersDataConfig.Characters[_party.PartyIDs[PartySlotType.Drums]].HP;
+            _playerDamage += _party.CharactersDataConfig.Characters[_party.PartyIDs[PartySlotType.Drums]].Atk;
         }
-        if (_party.CurrentDrumsID != -1)
+        if (_party.PartyIDs[PartySlotType.Guitar] != -1)
         {
-            StartPlayerHP += _party.CharactersDataConfig.Characters[_party.CurrentDrumsID].HP;
-            _playerDamage += _party.CharactersDataConfig.Characters[_party.CurrentDrumsID].Atk;
+            StartPlayerHP += _party.CharactersDataConfig.Characters[_party.PartyIDs[PartySlotType.Guitar]].HP;
+            _playerDamage += _party.CharactersDataConfig.Characters[_party.PartyIDs[PartySlotType.Guitar]].Atk;
+        }
+        if (_party.PartyIDs[PartySlotType.Bass] != -1)
+        {
+            StartPlayerHP += _party.CharactersDataConfig.Characters[_party.PartyIDs[PartySlotType.Bass]].HP;
+            _playerDamage += _party.CharactersDataConfig.Characters[_party.PartyIDs[PartySlotType.Bass]].Atk;
         }
         EnemyHP = StartEnemyHP;
         PlayerHP = StartPlayerHP;
