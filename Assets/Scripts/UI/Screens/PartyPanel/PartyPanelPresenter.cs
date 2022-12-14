@@ -42,8 +42,8 @@ namespace UI.Screens.PartyPanel
             OnGuitarButton = null;
             OnBassButton = null;
         }
-        
-        public void InitizlizeBanners()
+
+        private void InitizlizeBanners()
         {
             if (Model.PartyIDs[PartySlotType.Drums] != -1)
             {

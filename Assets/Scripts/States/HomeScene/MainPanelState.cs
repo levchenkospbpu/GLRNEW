@@ -8,10 +8,10 @@ namespace States.HomeScene
     public class MainPanelState : State
     {
         private readonly ISceneController _sceneController;
-        private readonly Party _party;
+        private readonly Party.Party _party;
         private readonly HomeMainPanelPresenter _homeMainPanelPresenter;
         
-        public MainPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, Party party)
+        public MainPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, Party.Party party)
         {
             _party = party;
             _sceneController = sceneController;

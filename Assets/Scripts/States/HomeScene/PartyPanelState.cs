@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UI;
 using UI.Canvas;
 using UI.Popups.ConfirmationPopup;
+using UI.Screens.CharacterInfo;
 using UI.Screens.HomeMainPanel;
 using UI.Screens.PartyPanel;
 using UnityEngine.Rendering.LookDev;
@@ -14,7 +15,7 @@ namespace States.HomeScene
     {
         private readonly ISceneController _sceneController;
         private readonly CharactersDataConfig _charactersDataConfig;
-        private readonly Party _party;
+        private readonly Party.Party _party;
 
         private readonly PartyPanelPresenter _partyPanelPresenter;
         private readonly CharacterInfoPresenter _characterInfoPresenter;
@@ -22,7 +23,7 @@ namespace States.HomeScene
 
         private Dictionary<PartySlotType, int> _startPartyIDs = new();
 
-        public PartyPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, CharactersDataConfig charactersDataConfig, Party party)
+        public PartyPanelState(ISceneController sceneController, UIProviderConfig uiProviderConfig, UiCanvasData uiCanvasData, CharactersDataConfig charactersDataConfig, Party.Party party)
         {
             _sceneController = sceneController;
             _charactersDataConfig = charactersDataConfig;

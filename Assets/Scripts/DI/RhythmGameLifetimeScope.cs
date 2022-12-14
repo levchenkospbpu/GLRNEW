@@ -18,7 +18,7 @@ public class RhythmGameLifetimeScope : LifetimeScope
 
         builder.Register<ActionBinder>(Lifetime.Singleton).AsImplementedInterfaces();
 
-        builder.RegisterEntryPoint<Party>(Lifetime.Singleton).AsSelf();
+        builder.RegisterEntryPoint<Party.Party>(Lifetime.Singleton).AsSelf();
         builder.RegisterEntryPoint<CustomSceneManager>(Lifetime.Singleton).AsSelf();
     }
 }

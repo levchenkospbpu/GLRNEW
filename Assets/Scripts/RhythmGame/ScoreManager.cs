@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     #endregion
 
     [Inject]
-    private Party _party;
+    private Party.Party _party;
     [Inject]
     //private UIProvider _uiProvider;
 

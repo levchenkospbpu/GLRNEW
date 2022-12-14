@@ -1,17 +1,17 @@
 using Common.MVP;
 using Data;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class CharacterInfoModel : BaseModel
+namespace UI.Screens.CharacterInfo
 {
-    public readonly Character[] Characters;
-    public readonly PartySlotType ChangableSlot;
-
-    public CharacterInfoModel(Character[] characters, PartySlotType partySlotType)
+    public class CharacterInfoModel : BaseModel
     {
-        Characters = characters;
-        ChangableSlot = partySlotType;
+        public readonly Character[] Characters;
+        public readonly PartySlotType ChangableSlot;
+
+        public CharacterInfoModel(Character[] characters, PartySlotType partySlotType)
+        {
+            Characters = characters;
+            ChangableSlot = partySlotType;
+        }
     }
 }

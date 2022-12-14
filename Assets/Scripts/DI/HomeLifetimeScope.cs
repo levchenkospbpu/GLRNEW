@@ -34,7 +34,7 @@ namespace DI
             builder.Register<MapPanelState>(Lifetime.Singleton);
             builder.Register<PartyPanelState>(Lifetime.Singleton);
 
-            builder.RegisterEntryPoint<Party>().AsSelf();
+            builder.RegisterEntryPoint<Party.Party>().AsSelf();
             builder.RegisterEntryPoint<Appearance>().AsSelf();
             builder.RegisterEntryPoint<HomeController>().As<ISceneController>();
             builder.RegisterEntryPoint<CustomSceneManager>().AsSelf();

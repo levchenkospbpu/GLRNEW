@@ -1,73 +1,72 @@
-using System.Collections;
-using System.Collections.Generic;
-using UI.Canvas;
-using UI;
-using UnityEngine;
-using Common.MVP;
 using System;
-using Object = UnityEngine.Object;
-using static UnityEditor.Progress;
-using UnityEngine.UI;
-using UI.Screens.PartyPanel;
+using System.Collections.Generic;
+using Common.MVP;
 using Data;
+using UI.Canvas;
+using UnityEngine;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
-public class CharacterInfoPresenter : BasePresenter<CharacterInfoView, CharacterInfoModel>
+namespace UI.Screens.CharacterInfo
 {
-    protected override GameObject Prefab { get; }
-    protected override Transform Parent { get; }
-
-    public Action<PartySlotType, int> OnChooseButton;
-    public Action<int> OnCharacterButton;
-
-    private readonly List<GameObject> _items = new();
-    private int _chosenCharacter;
-
-    public CharacterInfoPresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig) : base(uiCanvasData, uiProviderConfig)
+    public class CharacterInfoPresenter : BasePresenter<CharacterInfoView, CharacterInfoModel>
     {
-        Prefab = uiProviderConfig.CharacterInfoPanel;
-        Parent = uiCanvasData.Screens;
-    }
+        protected override GameObject Prefab { get; }
+        protected override Transform Parent { get; }
 
-    protected override void OnEnable()
-    {
-        View.ChooseButton.onClick.AddListener(() => OnChooseButton?.Invoke(Model.ChangableSlot, _chosenCharacter));
+        public Action<PartySlotType, int> OnChooseButton;
+        private Action<int> OnCharacterButton;
 
-        OnCharacterButton += SetChosenCharacter;
+        private readonly List<GameObject> _items = new();
+        private int _chosenCharacter;
 
-        LoadCharacterButtons();
-    }
-
-    private void LoadCharacterButtons()
-    {
-        ClearItems();
-
-        for (int i = 0; i < Model.Characters.Length; i++)
+        public CharacterInfoPresenter(UiCanvasData uiCanvasData, UIProviderConfig uiProviderConfig) : base(uiCanvasData, uiProviderConfig)
         {
-            var index = i;
-
-            var obj = Object.Instantiate(View.CharacterItemPrefab, View.ScrollContent);
-            obj.GetComponent<Image>().sprite = Model.Characters[i].Icon;
-            obj.GetComponent<Button>().onClick.AddListener(() => OnCharacterButton?.Invoke(index));
-            _items.Add(obj);
+            Prefab = uiProviderConfig.CharacterInfoPanel;
+            Parent = uiCanvasData.Screens;
         }
-    }
-    private void SetChosenCharacter(int id)
-    {
-        _chosenCharacter = id;
-    }
 
-    private void ClearItems()
-    {
-        foreach (var item in _items)
+        protected override void OnEnable()
         {
-            Object.Destroy(item);
-        }
-        _items.Clear();
-    }
+            View.ChooseButton.onClick.AddListener(() => OnChooseButton?.Invoke(Model.ChangableSlot, _chosenCharacter));
 
-    protected override void OnDisable()
-    {
-        OnChooseButton = null;
-        OnCharacterButton = null;
+            OnCharacterButton += SetChosenCharacter;
+
+            LoadCharacterButtons();
+        }
+
+        private void LoadCharacterButtons()
+        {
+            ClearItems();
+
+            for (int i = 0; i < Model.Characters.Length; i++)
+            {
+                var index = i;
+
+                var obj = Object.Instantiate(View.CharacterItemPrefab, View.ScrollContent);
+                obj.GetComponent<Image>().sprite = Model.Characters[i].Icon;
+                obj.GetComponent<Button>().onClick.AddListener(() => OnCharacterButton?.Invoke(index));
+                _items.Add(obj);
+            }
+        }
+        private void SetChosenCharacter(int id)
+        {
+            _chosenCharacter = id;
+        }
+
+        private void ClearItems()
+        {
+            foreach (var item in _items)
+            {
+                Object.Destroy(item);
+            }
+            _items.Clear();
+        }
+
+        protected override void OnDisable()
+        {
+            OnChooseButton = null;
+            OnCharacterButton = null;
+        }
     }
 }
